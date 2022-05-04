@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Pagina di registrazione</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content= "width=device-width, initial-scale=1" />
+        <link rel= ”stylesheet” href= " ../bootstrap/css/bootstrap.min.css" />
+        <link rel= "stylesheet" href="style.css" />
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="formValidation.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <a class="btn btn-primary btn-lg" href="../bootstrap/profiloutente/index.html" role="button">Profilo Utente</a>
+            <h1>Game of Fork</h1>
+        </div>
+    
+        <form action=”validateRegistration.php” class="form-signin" method=”POST” name=”myForm” onSubmit="validaForm()"/>
+            <img class=”mb-4” src=”../bootstrap/assets/brand/bootstrap-logo.svg” width=”72” />
+            
+            <h2 class=”h3 mb-3 font-weight-normal”>REGISTRAZIONE</h2>
+            <h3 class=”h3 mb-3 font-weight-normal”>Unisciti alla nostra community!</h3>
+            <h4 class=”h3 mb-3 font-weight-normal”>Basteranno pochi e semplici passaggi...compila il form che trovi di seguito!</h4>
+            Nome utente:
+            <input type="text" name="inputName" class="form-control" placeholder="Nome utente" required />
+            <br>
+            Email:
+            <input type=”email” name=”inputEmail” class=”form-control” placeholder=”Email address” required autofocus />
+            <br>
+            Password:
+            <input type=”password” name=”inputPassword” class=”form-control” placeholder=”Password” required />    
+            <br>
+            Immagine Profilo:
+            <input type="image" name="inputimage" class=”form-control” placeholder="Immagine profilo" required autofocus />
+            <br>
+            <div id=”divRemember ”class=”checkbox mb-3”>
+                <input type=”checkbox” name=”remember” />
+                <label for=”remember”>Remember me</label>
+            </div>
+            Gestione dei cookies:
+            <select name="Gestione dei cookies:">
+            <option value="nessuna" selected></option>
+            <option value="Accetto solo i cookies necessari">Accetto solo i cookies necessari</option>
+            <option value="Accetto tutti i cookies">Accetto tutti i cookies</option>
+            <option value="Personalizza la tua scelta">Personalizza la tua scelta</option>
+            </select>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" name="signupButton" type=”submit”>Invia</button>
+            <button class="btn btn-lg btn-primary btn-block" name="signupButton" type=”reset”>Reset</button>
+        </form>
+
+    </body>
+</html>
