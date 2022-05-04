@@ -1,0 +1,48 @@
+###############################
+INDEX.HTML
+###############################
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
+    <link rel="stylesheet" href="style.css" /> 
+    <script src="valida.js" type="application/javascript" ></script>
+    <title> Login </title>
+</head>
+
+<body class="text-center">
+
+    <form name="MyForm" action="login.php" method="POST" class="form-signin"
+      onsubmit="valida()">
+       <img src="../bootstrap/assets/img/favicons/android-chrome-192x192.png" width="50" />
+       <h1 class="mb-3"> Loggati! </h1>
+       <input type="email"  name="MyEmail" class="form-control" 
+           placeholder="Inserisci la tua email"  required autofocus/>
+       <input type="password"  name="MyPassword" class="form-control" 
+           placeholder="Inserisci la tua password" required />
+       <div class="mb-4"> 
+           <input type="checkbox" name="RememberMe" id="rmb"/>
+           <label for="rmb"> Ricordami </label>
+       </div>
+       <button type="submit" class="btn btn-danger"> Invia </button>
+    </form>
+</body>
+</html>
+
+
+###################################
+valida
+###################################
+
+function valida(){
+   if( console.log(document.getElementById("rmb").checked)) {
+       alert("Hai scelto di  essere ricordato");
+   }
+   else {
+    alert("Hai scelto di non essere ricordato");
+   }
+}
