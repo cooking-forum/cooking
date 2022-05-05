@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form_ricette.css" />
+    <script src="check-ricette.js"> </script>
+    <title> Ricetta - FORM</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="h1"> Game of Fork </h1>   
+    </div>
+
+    <br>
+    <div class="ricetta"> 
+        <form action="form_ricette.php" method="POST" class="form-ricetta" name="myRicetta" onSubit="chechRicetta()">
+            <h2 class="h2"> Aggiungi una tua ricetta! </h2> <br>
+            <h3 class="h3"> Con pochi e semplici passaggi puoi contribuire anche tu a migliorare il nostro forum! </h3> <br>
+            
+            <label for="nome ricetta" class="label"> nome ricetta </label>
+            <input type="text" name="nomeRicetta" class="form-input" required autofocus />
+            <br>
+            <br>
+            
+            <label for="nome utente" class="label"> autore </label>
+            <input type="text" name="nomeAutore" class="form-input" required />
+            <br>
+            <br>
+            
+            <label for="ingredienti" class="label"> Ingredienti </label> <br>
+            <textarea class="form-textarea" id="ingredienti" name="ingredienti" rows="12" cols="50" 
+                placeholder="Inserire ingredienti necessari"> </textarea> 
+            <br>
+            <br>
+    
+            <label for="procedimento" class="label"> Procedimento </label> <br>
+            <textarea class="form-textarea" id="procedimento" name="procedimento" rows="20" cols="100"
+                placeholder="Inserire il procedimento della ricetta"> </textarea> 
+            <br>
+            <br>
+    
+            <button class="btn" type="submit"> Invia </button> 
+            <button class="btn" type="reset"> Reset </button>
+    
+    
+        </form>
+        
+    </div>
+    
+</body>
+</html>
