@@ -26,5 +26,5 @@
                 }
             }
         ?>
-    </ body>
-</ html>
+    </body>
+</html>

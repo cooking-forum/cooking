@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css" />
     <script type="application/javascript" src="../js/bootstrap.js"></script>
-    <script src="login-check.js"> </script>
+    <script src="loginCheck.js"></script>
     <title>Login</title>
 </head>
 <body>
@@ -20,13 +20,11 @@
         <form action="login.php" method="POST" class="form-login" name="myLogin" onSubmit="checkLogin()">
             <h2 class="h2"> Inserisci le tue credenziali! </h1>
             <label for="email" class="label"> indirizzo email </label>
-            <input type="email" name="inputEmail" class="form-input" 
-                placeholder="email" required autofocus />
+            <input type="email" name="inputEmail" class="form-input" placeholder="email" required autofocus />
             <br>
             <br>
             <label for="password" class="label"> password </label> 
-            <input type="password" name="inputPassword" class="form-input"
-                placeholder="password" required /> 
+            <input type="password" name="inputPassword" class="form-input" placeholder="password" required /> 
             <br> 
             <br>
             <button class="btn" type="submit" name="accessButton"> Accedi </button>

@@ -91,3 +91,39 @@ h3 {
     padding: 12px 12px 12px 0;
 }
 
+.label-ingr {
+    text-align: left;
+    width: 15%;
+    margin-top: 6px;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    padding: 12px 12px 12px 0;
+    border: 3px solid rgb(255, 187, 187);
+    border-radius: 5px;
+}
+
+.num {
+    width: 5%;
+    height: 10%;
+    margin-top: 6px;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    padding: 12px 12px 12px 0;
+    border: 3px solid rgb(255, 187, 187);
+    border-radius: 5px;
+}
+
+.unita {
+    width: 3%;
+    height: 10%;
+    margin-top: 6px;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    padding: 12px 12px 12px 0;
+    border: 3px solid rgb(255, 187, 187);
+    border-radius: 5px;
+    background-color: white;
+}
