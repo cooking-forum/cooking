@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="form_ricette.css" />
     <script type="application/javascript" src="../js/bootstrap.js"></script>
     <script src="check-ricette.js"> </script>
+    <script src="add_ingrediente.js"> </script>
     <title> Ricetta - FORM</title>
 </head>
 <body>
@@ -16,49 +17,55 @@
 
     <br>
     <div class="ricetta"> 
-        <form action="form_ricette.php" method="POST" class="form-ricetta" name="myRicetta" onSubit="checkRicetta()">
+        <form action="form_ricette.php" method="POST" class="form-ricetta" id="ricetta" name="myRicetta" onSubit="checkRicetta()">
             <h2 class="h2"> Aggiungi una tua ricetta! </h2> <br>
             <h3 class="h3"> Con pochi e semplici passaggi puoi contribuire anche tu a migliorare il nostro forum! </h3> <br>
             
             <label for="nome ricetta" class="label"> nome ricetta </label>
-            <input type="text" name="nomeRicetta" class="form-input" required autofocus />
+            <input type="text" id="nricetta" name="nomeRicetta" class="form-input" required autofocus />
             <br>
             <br>
             
             <label for="nome utente" class="label"> autore </label>
-            <input type="text" name="nomeAutore" class="form-input" required />
+            <input type="text" id="nautore" name="nomeAutore" class="form-input" required />
             <br>
             <br>
-            
-            <label for="ingredienti" class="label"> Ingredienti </label> <br>
-            <input type="text" name="ingrediente1" class="label-ingr" placeholder="Ingrediente n° 1" required />
-            <input type="number" id="ingrediente1" name="ingrediente1" class="num" step="0,5" placeholder="Quantità" required>
-            <select name="unita" id="unita" class="unita">
-                <option value="gr">gr</option>
-                <option value="kg">kg</option>
-                <option value="l">l</option>
-                <option value="ml">ml</option>
-              </select>
-            <br>
-            <input type="text" name="ingrediente2" class="label-ingr" placeholder="Ingrediente n° 2" required />
-            <input type="number" id="ingrediente2" name="ingrediente1" class="num" step="0,5" placeholder="Quantità" required>
-            <select name="unita" id="unita" class="unita">
-                <option value="gr">gr</option>
-                <option value="kg">kg</option>
-                <option value="l">l</option>
-                <option value="ml">ml</option>
-              </select>
+
+            <div class="formIngr">
+                <label for="ingredienti" class="label"> Ingredienti </label> <br>
+                <input type="text" id="i1" name="ingrediente1" class="label-ingr" placeholder="Ingrediente n° 1" required />
+                <input type="number" id="n1" name="ingrediente1" class="num" step="0,5" placeholder="Quantità" required>
+                <select name="unita" id="unita" class="unita">
+                    <option id="gr" value="gr">gr</option>
+                    <option id="kg" value="kg">kg</option>
+                    <option id="l" value="l">l</option>
+                    <option id="ml" value="ml">ml</option>
+                </select>
+                <br>
+    
+                <input type="text" id="i2" name="ingrediente2" class="label-ingr" placeholder="Ingrediente n° 2" required />
+                <input type="number" id="n2" name="ingrediente2" class="num" step="0,5" placeholder="Quantità" required>
+                <select name="unita" id="unita" class="unita">
+                    <option value="gr">gr</option>
+                    <option value="kg">kg</option>
+                    <option value="l">l</option>
+                    <option value="ml">ml</option>
+                </select>
+                <br>
+            </div>
+     
+            <button class="btn-ingr" type="button" name="addIngrButton" id="bing" onclick="addIngrediente()"> Aggiungi ingrediente </button> 
+
             <br>
             <br>
     
             <label for="procedimento" class="label"> Procedimento </label> <br>
-            <textarea class="form-textarea" id="procedimento" name="procedimento" rows="20" cols="100"
-                placeholder="Inserire il procedimento della ricetta"> </textarea> 
+            <textarea class="form-textarea" id="procedimento" name="procedimento" rows="20" cols="100" placeholder="Inserire il procedimento della ricetta"> </textarea> 
             <br>
             <br>
     
-            <button class="btn" type="submit"> Invia </button> 
-            <button class="btn" type="reset"> Reset </button>
+            <button class="btn" type="submit" name="submitButton" id="binv"> Invia </button> 
+            <button class="btn" type="reset" name="resetButton" id="bres"> Reset </button>
     
     
         </form>

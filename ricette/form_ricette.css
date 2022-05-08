@@ -34,7 +34,6 @@ h3 {
     font-size: 20px;
 }
 
-
 .ricetta{
     width:100%;
     margin-top: 20px;
@@ -78,6 +77,21 @@ h3 {
 }
 
 .btn:hover {
+    background-color: rgb(243, 151, 75);
+}
+
+.btn-ingr {
+    background-color: rgb(245, 198, 179);
+    border: 2px solid rgb(231, 123, 34);
+    border-radius: 12px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 7px;
+}
+
+.btn-ingr:hover {
     background-color: rgb(243, 151, 75);
 }
 
