@@ -17,6 +17,6 @@ function validaForm() {
         alert("Inserire password");
         return false;
     }
-//gestione coockies
+
 
 }

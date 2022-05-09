@@ -3,7 +3,7 @@
         <title>Pagina di registrazione</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content= "width=device-width, initial-scale=1" />
-        <link rel= ”stylesheet” href= " ../bootstrap/css/bootstrap.min.css" />
+        <link rel= "stylesheet" href= " ../bootstrap/css/bootstrap.min.css" />
         <link rel= "stylesheet" href="style.css" />
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script src="formValidation.js"></script>
@@ -14,22 +14,22 @@
             <h1>Game of Fork</h1>
         </div>
     
-        <form action=”registrazione.php” class="form-signin" method=”POST” name=”myForm” onSubmit="return validaForm()" ENCTYPE="multipart/form-data"/>
+        <form action="registrazione.php" class="form-signin" method="POST" name="myForm" onSubmit="return validaForm()" ENCTYPE="multipart/form-data">
             
         <div class="bd">  
             <div class="sinistra" style="float: left; text-align: justify; width: 60%;">
-            <h2 class=”h3 mb-3 font-weight-normal”>REGISTRAZIONE</h2>
-            <h3 class=”h3 mb-3 font-weight-normal”>Unisciti alla nostra community!</h3>
-            <h4 class=”h3 mb-3 font-weight-normal”>Basteranno pochi e semplici passaggi...compila il form che trovi di seguito!</h4>
+            <h2 class="h3 mb-3 font-weight-normal">REGISTRAZIONE</h2>
+            <h3 class="h3 mb-3 font-weight-normal">Unisciti alla nostra community!</h3>
+            <h4 class="h3 mb-3 font-weight-normal"W>Basteranno pochi e semplici passaggi...compila il form che trovi di seguito!</h4>
         
             Nome utente:
             <input type="text" name="inputName" class="form-control" placeholder="Nome utente" required />
             <br>
             Email:
-            <input type="email" name=”inputEmail” class=”form-control” placeholder=”Email address” required autofocus />
+            <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required />
             <br>
             Password:
-            <input type="password" name=”inputPassword” class=”form-control” placeholder=”Password” required />    
+            <input type="password" name="inputPassword" class="form-control" placeholder="Password" required />    
             <br>
             Immagine Profilo:
             <input type="file" name="inputImage" size="35" placeholder="Immagine profilo" />
@@ -57,7 +57,7 @@
             <br>
             
             <input class="rst" type="reset" value="Reset">
-            <button class="btn btn-primary btn-lg" name="signupButton" buttontype="submit">Invia</button>
+            <button class="rst" name="signupButton" buttontype="submit">Invia</button>
 
         </form>
         </div>
