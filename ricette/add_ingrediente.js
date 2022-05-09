@@ -1,16 +1,16 @@
-
+/*
 function addIngrediente() {
     document.querySelector('.formIngr');
 }
+*/
 
 
-/*
 var counter = 2;
 
 function addIngrediente() {
     counter +=1;
-    html='<input type="text" id="i'+ counter +'" name="ingrediente'+ counter +'" class="label-ingr" placeholder="Ingrediente n° '+ counter +'" required />\
-          <input type="number" id="n'+ counter +'" name="ingrediente'+ counter +'" class="num" step="0,5" placeholder="Quantità" required>\
+    var html='<input type="text" id="i'+ counter +'" name="ingrediente'+ counter +'" class="label-ingr" placeholder="Ingrediente n° '+ counter +'" required />\
+          <input type="number" id="n'+ counter +'" name="ingrediente'+ counter +'" class="num" step="0,5" placeholder="Quantità" required/>\
           <select name="unita" id="unita" class="unita">\
             <option value="gr">gr</option>\
             <option value="kg">kg</option>\
@@ -22,7 +22,7 @@ function addIngrediente() {
        var form = document.getElementById('formIngr');
        form.innerHTML += html;
 }
-*/
+
 
 /*
 function addIngrediente() {
