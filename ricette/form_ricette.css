@@ -95,6 +95,16 @@ h3 {
     background-color: rgb(243, 151, 75);
 }
 
+#wrapper
+{
+    text-align:left;
+    width:100%;
+    padding:0px;
+    margin:0px auto;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
 .label {
     text-align: left;
     width: 20%;

@@ -24,9 +24,9 @@
                 $q2 = 'INSERT into utente values ($1,$2,$3,$4,$5,$6)' ;
                 $data = pg_query_params($dbconn, $q2, array($email,$nome,$pawd,$immagine,$cookies,$livello) ) ;
                     if($data){
-                        echo "<h1> Registrazione completata<br/></h1>";
+                        echo "<h1> Registrazione completata <br></h1>";
                         $nome = $line["nome"];
-                        echo "<a href = Welcome.php? name=$nome >Premi qui per inziare ad utilizzare il sito web </a>";
+                        echo "<a href = Welcome.php? name=$nome> Premi qui per inziare ad utilizzare il sito web </a>";
                     }
                 }
             }

@@ -1,8 +1,35 @@
+
+var counter = 2;
+
+function addIngrediente() {
+    var total_text=document.getElementsByClassName("input_text");
+    total_text=total_text.length+1;
+    counter++;
+    document.getElementById("field_div").innerHTML=document.getElementById("field_div").innerHTML+
+    "<input type='text' class='label-ingr' id='i"+counter+"' name='ingrediente"+counter+"' placeholder='Ingrediente n° "+counter+"' required/>\
+    <input type='number' class='num' id='i"+counter+"' name='numero"+counter+"' step='0.5' placeholder='  Quantità' required/>\
+    <select class='unita' id='unita"+counter+"' name='unita'/>\
+    <option value='gr'>gr</option>\
+    <option value='kg'>kg</option>\
+    <option value='l'>l</option>\
+    <option value='ml'>ml</option>\
+    </select>\
+    <input type='button' value='Remove' onclick=remove_field('input_text"+total_text+"');><br>";
+}
+
+function remove_field(id) {
+  document.getElementById(id+"_wrapper").innerHTML="";
+  counter--;
+}
+
+
+
+
 /*
 function addIngrediente() {
     document.querySelector('.formIngr');
 }
-*/
+
 
 
 var counter = 2;
@@ -10,8 +37,8 @@ var counter = 2;
 function addIngrediente() {
     counter +=1;
     var html='<input type="text" id="i'+ counter +'" name="ingrediente'+ counter +'" class="label-ingr" placeholder="Ingrediente n° '+ counter +'" required />\
-          <input type="number" id="n'+ counter +'" name="ingrediente'+ counter +'" class="num" step="0,5" placeholder="Quantità" required/>\
-          <select name="unita" id="unita" class="unita">\
+          <input type="number" id="n'+ counter +'" name="numero'+ counter +'" class="num" step="0,5" placeholder="Quantità" required/>\
+          <select name="unita" id="unita'+ counter +'" class="unita">\
             <option value="gr">gr</option>\
             <option value="kg">kg</option>\
             <option value="l">l</option>\
@@ -22,7 +49,7 @@ function addIngrediente() {
        var form = document.getElementById('formIngr');
        form.innerHTML += html;
 }
-
+*/
 
 /*
 function addIngrediente() {
@@ -31,8 +58,8 @@ function addIngrediente() {
 
     // aggiungere una nuova input box all'elemento
 	txtNewInputBox.innerHTML = "<input type='text' id='i3' name='ingrediente3' class='label-ingr' placeholder='Ingrediente n° 3' required>";
-    txtNewInputBox.innerHTML = "<input type='number' id='n3' name='ingrediente3' class='num' step='0,5' placeholder='Quantità' required>";
-    txtNewInputBox.innerHTML = "<select name='unita' id='unita' class='unita'>";
+    txtNewInputBox.innerHTML = "<input type='number' id='n3' name='numero3' class='num' step='0,5' placeholder='Quantità' required>";
+    txtNewInputBox.innerHTML = "<select name='unita' id='unita3' class='unita'>";
     txtNewInputBox.innerHTML = "<option id='gr' value='gr'>gr</option>";
     txtNewInputBox.innerHTML = "<option id='kg' value='kg'>kg</option>";
     txtNewInputBox.innerHTML = "<option id='l' value='l'>l</option>";
@@ -59,7 +86,7 @@ $(document).ready(function() {
     e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<input type="text" id="i3" name="ingrediente3" class="label-ingr" placeholder="Ingrediente n° 3" required><input type="number" id="n3" name="numero3" class="num" step="0,5" placeholder="Quantità" required><select name="unita" id="unita" class="unita"><option value="gr">gr</option><option value="kg">kg</option><option value="l">l</option><option value="ml">ml</option></select>'); //add input box
+            $(wrapper).append('<input type="text" id="i3" name="ingrediente3" class="label-ingr" placeholder="Ingrediente n° 3" required><input type="number" id="n3" name="numero3" class="num" step="0,5" placeholder="Quantità" required><select name="unita3" id="unita" class="unita"><option value="gr">gr</option><option value="kg">kg</option><option value="l">l</option><option value="ml">ml</option></select>'); //add input box
         }
     });
     

@@ -8,14 +8,14 @@
         if (!(isset($_POST['accessButton']))) { header("Location: ../home/index.html"); }
         else {
             $email = $_POST['inputEmail'];
-            $q1 = "select * from utente where email= $1";
+            $q1 = "SELECT * from utente where email= $1";
             $result = pg_query_params($dbconn, $q1, array($email));
             if (!($line=pg_fetch_array($result, null, PGSQL_ASSOC))) {
                 echo "<h1> Non sei registrato! Clicca </h1> <a href=../registrazione/registrazione.html> QUI </a> <h1> per registrarti! <h1>";
             }
             else {
                 $password = md5($_POST['inputPassword']);
-                $q2 = "select * from utente where email = $1 and paswd = $2";
+                $q2 = "SELECT * from utente where email = $1 and paswd = $2";
                 $result = pg_query_params($dbconn, $q2, array($email, $password));
                 if (!($line=pg_fetch_array($result, null, PGSQL_ASSOC))) {
                     echo "<h1> La password inserita è errata! Clicca </h1> <a href=login.html> QUI </a> <h1> per registrarti! <h1>";
