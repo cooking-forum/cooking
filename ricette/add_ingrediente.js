@@ -1,5 +1,24 @@
 
-var counter = 2;
+var counter = 0;
+
+function add_row(){
+    $("#wrapper:last").after("<input type='text' class='label-ingr' id='i"+counter+"' name='ingrediente"+counter+"' placeholder='Ingrediente n° "+counter+"' required/>\
+                            <input type='number' class='num' id='i"+counter+"' name='numero"+counter+"' step='0.5' placeholder='  Quantità' required/>\
+                            <select class='unita' id='unita"+counter+"' name='unita'/>\
+                            <option value='gr'>gr</option>\
+                            <option value='kg'>kg</option>\
+                            <option value='l'>l</option>\
+                            <option value='ml'>ml</option>\
+                            </select>\
+                            <input type='button' value='Remove' onclick=remove_field('input_text"+counter+"')><br>");                          
+}
+
+function remove_field(counter) {
+    $('#i'+counter).remove();
+}
+
+/*
+var counter = 0;
 
 function addIngrediente() {
     var total_text=document.getElementsByClassName("input_text");
@@ -21,7 +40,7 @@ function remove_field(id) {
   document.getElementById(id+"_wrapper").innerHTML="";
   counter--;
 }
-
+*/
 
 
 

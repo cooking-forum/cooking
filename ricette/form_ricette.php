@@ -19,18 +19,15 @@
             else {
                 $nome = $_POST["nomeRicetta"];
                 $auto = $_POST["nomeAutore"];
-                $ing1 = $_POST["ingrediente1"];
-                $num1 = $_POST["numero1"];
-                $uni1 = $_POST["unita1"];
-                $ing2 = $_POST["ingrediente2"];
-                $num2 = $_POST["numero2"];
-                $uni2 = $_POST["unita2"];
+                $ingr = $_POST["ingrediente"];
+                $nume = $_POST["numero"];
+                $unit = $_POST["unita"];
                 $proc = $_POST["procedimento"];
                 $foto = $_POST["caricaFoto"];
-                $q2 = "INSERT into ricetta values ($1, $2, $9, $10)";
+                $q2 = "INSERT into ricetta values ($1, $2, $6, $7)";
                 $data2 = pg_query_params($dbconn, $q2, array($nome, $auto, $proc, $foto) ) ;
-                $q3 = "INSERT into ingrediente values ($3, $4, $5, $6, $7, $8)";
-                $data3 = pg_query_params($dbconn, $q3, array($ing1, $num1, $uni1, $ing2, $num2, $uni2) ) ;
+                $q3 = "INSERT into ingrediente values ($3, $4, $5)";
+                $data3 = pg_query_params($dbconn, $q3, array($ingr, $nume, $unit) ) ;
 
                 if($data2 && $data3){
                     echo "<h1> Ricetta inserita con successo!! <br></h1>";
