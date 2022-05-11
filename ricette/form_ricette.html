@@ -22,24 +22,41 @@
             <h3 class="h3"> Con pochi e semplici passaggi puoi contribuire anche tu a migliorare il nostro forum! </h3> <br>
             
             <label for="nome ricetta" class="label"> nome ricetta </label>
-            <input type="text" id="nricetta" name="nomeRicetta" class="form-input" required autofocus />
+            <input type="text" id="nricetta" name="nomeRicetta" class="form-input" required autofocus >
             <br>
             <br>
             
             <label for="nome utente" class="label"> autore </label>
-            <input type="text" id="nautore" name="nomeAutore" class="form-input" required />
+            <input type="text" id="nautore" name="nomeAutore" class="form-input" required >
             <br>
             <br>
 
-            <div id="wrapper">
-                <label for="ingredienti" class="label"> Ingredienti </label> 
-                <div id="field_div">
-                    <button class="btn-ingr" type="btn" name="addIngrButton" id="bing" value="Add Ingrediente" onclick="addIngrediente()"> Aggiungi ingrediente </button> 
-                    <br>
+            <div class="wrapper" id="wrapper">
+                <label for="ingredienti" class="label"> Ingredienti </label>
+                <input class="btn-ingr" type="button" onclick="addIngrediente();" value="Aggiungi ingrediente">
+                <div class="ingr_div" id="ingr_div">
+                    <form method="post" action="form_ricette.php">
+                    <table id="ingr_table" >
+                        <tr id="row1">
+                            <td><input type='text' class='label-ingr' id='i1' name='ingrediente1' placeholder='Ingrediente n° 1' required></td>
+                            <td><input type='number' class='num' id='n1' name='numero1' step='0.5' placeholder='Quantità' min="0" required></td>
+                            <td>
+                                <select class='unita' id='unita1' name='unita'>
+                                    <option value='gr'>gr</option>
+                                    <option value='kg'>kg</option>
+                                    <option value='l'>l</option>
+                                    <option value='ml'>ml</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input class="btn-ingr" type='button' value='Rimuovi ingrediente' onclick="deleteIngrediente(0);">
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    </form>
                 </div>
-                <br>
             </div>
-
 
             <br>
             <br>
@@ -50,7 +67,7 @@
             <br>
 
             <label for="caricamento" class="label"> Carica foto </label> <br>
-            <input type="file" name="caricaFoto" class="carica"/>
+            <input type="file" name="caricaFoto" class="carica">
 
             <br>
             <br>
