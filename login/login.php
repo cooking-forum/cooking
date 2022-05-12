@@ -3,7 +3,9 @@
 <head></head>
 <body>
     <?php
-        $dbconn = pg_connect("host=localhost port=5500 dbname=Utenti user=postgres password=SiCucina_Utenti") or die("Impossibile connettersi: " . pg_last_error());
+        session_start();
+        
+        $dbconn = pg_connect("host=localhost dbname=registrazione port=5432 user=donia password=diag") or die("Impossibile connettersi: " . pg_last_error());
         
         if (!(isset($_POST['accessButton']))) { header("Location: ../home/index.html"); }
         else {
@@ -15,14 +17,16 @@
             }
             else {
                 $password = md5($_POST['inputPassword']);
-                $q2 = "SELECT * from utente where email = $1 and paswd = $2";
+                $q2 = "SELECT * from utente where email = $1 and pawd = $2";
                 $result = pg_query_params($dbconn, $q2, array($email, $password));
                 if (!($line=pg_fetch_array($result, null, PGSQL_ASSOC))) {
                     echo "<h1> La password inserita è errata! Clicca </h1> <a href=login.html> QUI </a> <h1> per registrarti! <h1>";
                 }
                 else {
-                    $nome = $line['nome'];
-                    echo "<a href=../welcome.php?name=$nome> Premi qui </a> per inziare ad utilizzare il sito web";
+                    $nome=$line['nome'];
+                    $_SESSION['username']= "$email";
+                    header("Location: ../home/index.html");
+                    //echo "<a href = ../home/index.html>Premi qui per andare al tuo profilo utente </a>";
                 }
             }
         }
