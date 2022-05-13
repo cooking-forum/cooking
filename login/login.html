@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href= " ../bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="login.css" />
-    <script type="application/javascript" src="../js/bootstrap.js"></script>
+    <script type="application/javascript" src="../bootstrap/js/bootstrap.js"></script>
     <script src="loginCheck.js"></script>
     <title>Login</title>
 </head>
@@ -17,16 +18,14 @@
     <br>
 
     <div class="column left"> 
-        <form action="login.php" method="POST" class="form-login" name="myLogin" onSubmit="checkLogin()">
+        <form action="login.php" method="POST" class="form-login" name="myLogin" onsubmit="checkLogin();">
             <h2 class="h2"> Inserisci le tue credenziali! </h1>
             <label for="email" class="label"> indirizzo email </label>
             <input type="email" name="inputEmail" class="form-input" placeholder="email" required autofocus />
-            <br>
-            <br>
+            <br> <br>
             <label for="password" class="label"> password </label> 
             <input type="password" name="inputPassword" class="form-input" placeholder="password" required /> 
-            <br> 
-            <br>
+            <br> <br>
             <button class="btn" type="submit" name="accessButton" > Accedi </button>
             <button class="btn" type="reset" name="resetButton"> Reset </button>
         </form>

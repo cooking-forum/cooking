@@ -1,10 +1,10 @@
-function checkRicetta() {
-    if (document.myRicetta.inputEmail.value == "") {
-        window.alert("Inserire email!");
+function checkLogin() {
+    if (document.myLogin.inputEmail.value == "") {
+        alert("Inserire email!");
     }
 
-    if (document.myRicetta.inputPassword.value == "") {
-        window.alert("Inserire password!");
+    if (document.myLogin.inputPassword.value == "") {
+        alert("Inserire password!");
     }
 
     else return false;

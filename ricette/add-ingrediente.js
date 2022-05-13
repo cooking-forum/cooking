@@ -4,7 +4,7 @@ var counter = 1;
 
 function addIngrediente(){
     // Find a <table> element with id="myTable":
-    var table = document.getElementById("ingr_table");
+    var table = document.getElementById("ingr-table");
     
     counter ++;
 
@@ -20,12 +20,12 @@ function addIngrediente(){
     // Add some text to the new cells:
     cell1.innerHTML = "<input type='text' class='label-ingr' id='i"+counter+"' name='ingrediente"+counter+"' placeholder='Ingrediente n° "+counter+"' required>";
     cell2.innerHTML = "<input type='number' class='num' id='n"+counter+"' name='numero"+counter+"' step='0.5' placeholder='Quantità' required>";
-    cell3.innerHTML = "<select class='unita' id='unita"+counter+"' name='unita'><option value='gr'>gr</option><option value='kg'>kg</option><option value='l'>l</option><option value='ml'>ml</option></select>";
+    cell3.innerHTML = "<select class='unita' id='u"+counter+"' name='unita"+counter+"'><option value='gr'>gr</option><option value='kg'>kg</option><option value='l'>l</option><option value='ml'>ml</option></select>";
     cell4.innerHTML = "<input class='btn-ingr' type='button' value='Rimuovi ingrediente' onclick=deleteIngrediente('counter')>";
 }
 
 function deleteIngrediente(counter) {
-    var table = document.getElementById("ingr_table");
+    var table = document.getElementById("ingr-table");
     var row = table.deleteRow(counter);  
     counter --;
 }

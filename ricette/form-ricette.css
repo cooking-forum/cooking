@@ -115,7 +115,7 @@ h3 {
 
 .label-ingr {
     text-align: left;
-    width: 15%;
+    width: 70%;
     margin-top: 6px;
     display: inline-block;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -125,14 +125,15 @@ h3 {
     border-radius: 5px;
 }
 
-#ingr_table {
+#ingr-table {
     width:100%;
     height:35px;
     text-align: left;
+    table-layout: auto;
 }
 
 .num {
-    width: 5%;
+    width: 25%;
     height: 10%;
     margin-top: 6px;
     display: inline-block;
@@ -144,8 +145,8 @@ h3 {
 }
 
 .unita {
-    width: 3%;
-    height: 10%;
+    width: 50%;
+    height: 20%;
     margin-top: 6px;
     display: inline-block;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
