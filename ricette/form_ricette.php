@@ -26,7 +26,7 @@
 
                 $count = substr_count($html,'<td>')/4;
 
-                for ($i = 0, $i < $count, $i++) {
+                for ($i = 0; $i < $count; $i++) {
                     $nome = $_POST["nomeRicetta"];
                     $ingr = $_POST["ingrediente"];
                     $nume = $_POST["numero"];

@@ -29,7 +29,7 @@
         <div class="header">
             <button class="btn btn-primary btn-lg" name="logoutBtn">Logout</button>
             
-            <li><a href="../home/index.html"> <img class="tastohome" src="immagini/tastohome.jpg"></a></li>
+            <li><a href="../home/index.html"> <img class="tastohome" src="../immagini/tastohome.jpg"></a></li>
             <h1> Game of Fork </h1>   
         </div>
         <?php
@@ -52,7 +52,7 @@
                     $line=pg_fetch_array($result, null, PGSQL_ASSOC);
 
                     if($line['immagine']==""){
-                        echo '<img class="foto" src="immagini/fotoprofilo.jpg">';
+                        echo '<img class="foto" src="../immagini/fotoprofilo.jpg">';
         
                     }else{
                         echo '<img src="uploaded_img/'.$line['immagine'].'">';

@@ -10,7 +10,7 @@ body {
     height:80px;
 	width:100%;
 	z-index:2;
-    background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242, 83, 83, 0.7)), url(../Foto/8272e677-929e-439f-ba34-6ab8ef84edc9.jpeg);
+    background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242, 83, 83, 0.7)), url(../immagini/8272e677-929e-439f-ba34-6ab8ef84edc9.jpeg);
     background-position: center; 
     background-size: contain;
     position: fixed;
