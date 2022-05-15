@@ -157,6 +157,19 @@ h3 {
     background-color: white;
 }
 
+.tipologia {
+    width: 10%;
+    height: 20%;
+    margin-top: 6px;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    padding: 12px 12px 12px 0;
+    border: 3px solid rgb(255, 187, 187);
+    border-radius: 5px;
+    background-color: white;
+}
+
 .carica {
     width: 320px;
     height: 200px;
