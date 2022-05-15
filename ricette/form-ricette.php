@@ -4,25 +4,41 @@
 <body>
     <?php
         $dbconn = pg_connect("host=postgresql_database port=5432 dbname=test user=admin password=admin1234")
-        or die("Impossibile connettersi: " . pg_last_error());
+                        or die("Impossibile connettersi: " . pg_last_error());
 
-        if(!$dbconn) {
-            echo "ERRORE : impossibile connettersi al database!";
+        if(!(isset($_POST["submitButton"] ) ) ) {
+            header ( " Location : form-ricette.html" );
         }
         else {
-            $rice = $_POST['nomeRicetta'];
-            $ingr = $_POST['ingrediente1'];
-            $quan = $_POST['numero1'];
-            $unit = $_POST['unita1'];
+            $ricetta = $_POST["nomeRicetta"];
+            $q1 = "SELECT * from ricetta where nomer = $ricetta";
+            $result = pg_query_params($dbconn, $q1, array($ricetta));
+            if ($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
+                echo "<h1> Una ricetta con lo stesso nome è già stata inserita! Prova a aggiungere un commento sotto al post <h1>";
+            }
+            else {
+                $autore = $_POST["nomeAutore"];
+                $proc = $_POST["procedimento"];
+                $tipo = $_POST["tipo"];
+                // $foto = $_POST["caricaFoto"];
+                $q2 = "INSERT into ricetta (utente, nomer, procedimento, tipologia) values ('$autore', '$ricetta', '$proc', '$tipo')";
+                $data2 = pg_query($dbconn, $q2);
 
-            $query = "INSERT INTO  ingrediente (ricetta, nomei, quantita, unita) VALUES ('$rice', '$ingr', '$quan', '$unit')";
-            $result = pg_query($dbconn, $query);
+                if ($data2) {
+                    echo "<h1> Ricetta inserita con successo!! <br></h1>";
+                }
+                
+                $ingr = $_POST["ingrediente1"];
+                $nume = $_POST["numero1"];
+                $unit = $_POST["unita1"];
+                $q3 = "INSERT into ingrediente (ricetta, nomei, quantita, unita) values ('$ricetta', '$ingr', '$nume', '$unit')";
+                $data3 = pg_query($dbconn, $q3);
+            
+                if ($data3) {
+                    echo "<h1> ingredienti inseriti con successo!! <br></h1>";
+                }
+            }
         }
-
-        header("Location: form-ricette.html");
-
-        pg_close($dbconn);
-
     ?>
     
     
