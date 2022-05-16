@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Pagina iniziale</title>
+       <meta charset="utf-8" />
+       <meta name=" viewport" content=" width=device-width, initial-scale=1" />
+       <link rel=" stylesheet" type=" text/css" href="../bootstrap/css/bootstrap.min.css" />
+       <link rel= "stylesheet" href="style.css" />
+       <link rel="stylesheet" href="risorse/owl.carousel.min.css">
+       <link rel="stylesheet" href="risorse/owl.theme.default.min.css">
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <script src="risorse/owl.carousel.js"></script>
+       <script type=" application/javascript" src=" ../bootstrap/js/bootstrap.min.js"></script> 
+
+
+       
+    
+    <script type="text/javascript"> //per attivare jquery  
+        $( document ).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:4
+        }
+    }
+})
+        });
+    </script>
+
+    </head>
+    <body >
+        <div class="header">
+            <h1> Game of Fork </h1>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+    
+        <div class="re"><a href=" registrazione/index.html" >Sei un nuovo utente? <h class=" btn btn-primary btn-lg" role=" button">Registrati </a></h></div>
+        <br>
+        <div class="ac"><a href="login/login.html"> Hai già un account? <h class="btn btn-primary btn-lg" role=" button">Accedi </a></h></div>
+        
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="owl-carousel owl-theme">
+            <div class="item"><h4><img class="foto" src="immagini/pancakes.jpg"><p>Stanco dei soliti piatti?</p></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/pizza.jpg"><p> <p></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/salmone.jpg"></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/pasta.jpg"></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/eclair.jpg"></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/shish-kebab.jpg"></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/pate.jpg"></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/cupcakes.jpg"></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/hamburger.jpg"></h4></div>
+            <div class="item"><h4><img class="foto" src="immagini/bruschetta.jpg"></h4></div>
+            
+        </div>
+
+       
+        
+    
+</body>
+</html>
