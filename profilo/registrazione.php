@@ -11,7 +11,7 @@
 
         }else {
 
-            $email = $_POST["inputEmail"] ;
+            $email = $_POST["inputEmail"];
             $_SESSION['username'] = "$email";
 
 
