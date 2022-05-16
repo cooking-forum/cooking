@@ -1,14 +1,15 @@
 
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
     <link rel="stylesheet" href="style.css" /> 
     <title>Forum Cucina</title>
-</head>
+    </head>
     <body>
+        <form ENCTYPE="multipart/form-data">
         <?php
             session_start();
 
@@ -29,7 +30,7 @@
         <div class="header">
             <button class="btn btn-primary btn-lg" name="logoutBtn">Logout</button>
             
-            <li><a href="../home/index.html"> <img class="tastohome" src="../immagini/tastohome.jpg"></a></li>
+            <li><a href="../home/index.html"> <img class="tastohome" src="immagini/tastohome.jpg"></a></li>
             <h1> Game of Fork </h1>   
         </div>
         <?php
@@ -47,20 +48,49 @@
                 
                 <?php
                     $email=$_SESSION['username'];
-                    $q1 = "SELECT * from utente where email= $1";
+                    $q1 = 'SELECT * from utente where email= $1';
                     $result = pg_query_params($dbconn, $q1, array($email));
                     $line=pg_fetch_array($result, null, PGSQL_ASSOC);
 
-                    if($line['immagine']==""){
-                        echo '<img class="foto" src="../immagini/fotoprofilo.jpg">';
-        
+                    $uploaded = false;
+
+
+                    $save_path = 'images\\image_2.jpeg';   
+                    $q2=  'select * from getimage($1)';
+                    $res = pg_query_params($dbconn, $q2, array($email));
+                    
+
+                    if($res){
+
+                        $img = pg_fetch_object($res);
+                        $imgdata = $img->imgdata;
+                        $offset = strlen($email)+1;
+                        $imgdata = substr($imgdata,$offset);
+                        $bin = hex2bin($imgdata);
+                        file_put_contents($save_path, base64_decode($bin));
+
+                     ?>
+
+                    <div class="foto">
+                    <img src="
+                    <?php
+                        
+                        echo $save_path;
+                    
+                    ?>">
+                    </div>
+                    
+                    <?php
+
                     }else{
-                        echo '<img src="uploaded_img/'.$line['immagine'].'">';
+                        
+                         echo '<img class="foto" src="immagini/fotoprofilo.jpg">'; 
                     }
 
-                    //$immagine=$line['immagine'];
-                    //echo "$immagine";
-                ?>
+                    ?>
+                
+
+                
             
                 <br> 
                 Nome Utente
