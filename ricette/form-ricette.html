@@ -9,7 +9,6 @@
     <script type="application/javascript" src="../bootstrap/js/bootstrap.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="check-ricette.js"> </script>
-    <script src="add-ingrediente.js"> </script>
     <title> Ricetta - FORM </title>
 </head>
 <body>
@@ -25,42 +24,20 @@
             <label for="nome-ricetta" class="label"> nome ricetta </label>
             <input type="text" name="nomeRicetta" class="form-input" required autofocus />
             <select class='tipologia' id='tip' name='tipo' placeholder='Tipologia' required>
+                <option></option>
                 <option value='antipasti'>antipasti</option>
                 <option value='primi'>primi</option>
                 <option value='secondi'>secondi</option>
+                <option value='contorni'>contorni</option>
                 <option value='dolci'>dolci</option>
             </select>
             <br> <br>
             
-            <label for="nome-utente" class="label"> autore </label>
-            <input type="text" name="nomeAutore" class="form-input" required />
-            <br> <br>
+            
+            <label for="ingredienti" class="label"> Ingredienti </label> <br>
+            <textarea class="form-textarea" id="ingredienti" name="ingredienti" rows="20" cols="20" placeholder="Inserire gli ingredienti della ricetta" required > </textarea> 
 
-            <div class="wrapper">
-                <label for="ingredienti" class="label"> Ingredienti </label>
-                <input class="btn-ingr" type="button" value="Aggiungi ingrediente" onclick="addIngrediente();" />
-                <div class="ingr-div">
-                    <div class="div">
-                        <table id="ingr-table">
-                        <tr id="row1">
-                            <td><input type='text' class='label-ingr' id='i1' name='ingrediente1' placeholder='Ingrediente n° 1' required /> </td>
-                            <td><input type='number' class='num' id='n1' name='numero1' step='0.5' placeholder='Quantità' min="0" required /> </td>
-                            <td>
-                                <select class='unita' id='u1' name='unita1' placeholder='Unità' required>
-                                    <option value='gr'>gr</option>
-                                    <option value='kg'>kg</option>
-                                    <option value='l'>l</option>
-                                    <option value='ml'>ml</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input class="btn-ingr" type='button' value='Rimuovi ingrediente' onclick="deleteIngrediente(0);" />
-                            </td>
-                        </tr>
-                    </table>
-                    </div>
-                </div>
-            </div>
+            
             <br> <br>
             <label for="procedimento" class="label"> Procedimento </label> <br>
             <textarea class="form-textarea" id="procedimento" name="procedimento" rows="20" cols="100" placeholder="Inserire il procedimento della ricetta" required> </textarea> 

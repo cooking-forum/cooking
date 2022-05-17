@@ -64,6 +64,7 @@ h3 {
     display: inline-block;
     border: 3px solid rgb(255, 187, 187);
     border-radius: 5px;
+    height:200px;
 }
 
 .btn {
