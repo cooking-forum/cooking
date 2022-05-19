@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
+    <link rel="stylesheet" href="style.css" /> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Forum Cucina</title>
+</head>
+<body >
+    <form action="" method="POST" ENCTYPE="multipart/form-data">
+   
+  
+    <div class="header">
+        
+        <a class="btn btn-primary btn-lg" name="profiloBtn" href="../profilo/profilo.php?" role="button">
+            Profilo Utente
+        </a>
+        <h1> Game of Fork </h1>   
+    </div>
+   
+
+    <div class="sinistra" style="float: left; text-align: justify; width:20%;">
+        <nav> 
+            <ul>
+                <li><a href="#"> FORUM <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
+                    <ul>
+                        <li><a href="#"> Partecipa ad una conversazione</a></li>
+                        <li><a href="#"> Inizia una chat </a></li>
+                    </ul>
+                </li>
+                <li><a href="#"> Home </a></li>
+                <li><a href="#"> Antipasti <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
+                    <ul>
+                        <li><a href="#">Freddi</a></li>
+                        <li><a href="#"> Caldi </a></li>
+                    </ul>
+                </li>
+                <li><a href="#"> Primi </a></li>
+                <li><a href="#"> Secondi <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
+                    <ul>
+                    <li><a href="#">Freddi</a></li>
+                    <li><a href="#"> Caldi </a></li>
+                    </ul>
+                </li>
+                <li><a href="#"> Contorni </a></li>
+                <li><a href="#"> Dolci </a></li>
+                <li><a href="#"> Chi Siamo </a></li>
+                <li><a href="../ricette/form-ricette.html"> Crea Ricetta </a></li>
+            </ul>
+        </nav>
+        
+    </div>
+    <div id="container" style="float: right; text-align: justify; width: 60%;">
+       <ul id="griglia">
+
+
+           
+           <?php
+
+                session_start();
+                $email = $_SESSION['username'];
+                $uploaded=false;
+                $save_path='';
+
+                $dbconn = pg_connect("host=localhost dbname=registrazione port=5432 user=donia password=diag")
+                        or die( 'Could not connect: ' . pg_last_error());
+
+                
+
+                    
+                    
+                    $result = pg_query($dbconn, "SELECT * FROM ricetta");
+
+                    while($row=pg_fetch_assoc($result)){
+                         
+                        
+                        $nomer=$row['nomer'];
+
+                        $q3 = 'SELECT * from fotoricette where added_by = $1';
+                        $result1 = pg_query_params($dbconn, $q3, array($nomer));
+                        $line2=pg_fetch_array($result1, null, PGSQL_ASSOC);
+                    
+                        $id = $line2['id'];
+                        $save_path = "images/".$id.".jpeg";
+                    
+                        
+                        $q2=  'SELECT * from get_image($1)';
+                        $res = pg_query_params($dbconn, $q2, array($id));
+
+                
+                    
+
+                        if($res){
+
+                            $img = pg_fetch_object($res);
+                            $imgdata =$img->imgdata;
+                            $imgdata = substr($imgdata, 2);
+                            $bin = hex2bin($imgdata);
+                            file_put_contents($save_path,base64_decode($bin));
+                            
+
+                        }  
+                        
+                        echo "<li>"."<a href='../ricetta/ricetta.php?name=$nomer'>"."<img  class='imgw200' src=".$save_path.">"."<br>".$nomer."</a>"."</li>";
+                        
+                       
+                   
+                    }
+                
+                    
+
+                ?>
+           
+           
+           
+          
+        
+
+       </ul>
+
+       
+    </div>
+    
+</body>
+</html>

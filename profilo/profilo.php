@@ -9,11 +9,12 @@
     <title>Forum Cucina</title>
     </head>
     <body>
-        <form action="" method="post" ENCTYPE="multipart/form-data">
+        <form action="" method="POST" ENCTYPE="multipart/form-data">
         <?php
             session_start();
             $uploaded=false;
             $save_path='';
+           
 
             
 
@@ -32,7 +33,7 @@
         <div class="header">
             <button class="btn btn-primary btn-lg" name="logoutBtn">Logout</button>
             
-            <li><a href="../home/index.html"> <img class="tastohome" src="immagini/tastohome.jpg"></a></li>
+            <li><a href="../home/home.php?"> <img class="tastohome" src="immagini/tastohome.jpg"></a></li>
             <h1> Game of Fork </h1>   
         </div>
         <?php
@@ -49,8 +50,9 @@
             <div class="sinistra" style="float: left; text-align: justify; width:50%;">
                 
                 <?php
-                $save_path = 'images\\images_2.jpeg'; 
+                $save_path = 'images//images_2.jpeg'; 
                 if($dbconn){
+
                     $email=$_SESSION['username'];
                     $q1 = 'SELECT * from utente where email= $1';
                     $result = pg_query_params($dbconn, $q1, array($email));
@@ -61,9 +63,9 @@
                     $line2=pg_fetch_array($result1, null, PGSQL_ASSOC);
                     
                     $id = $line2['id'];
-
+                    
                       
-                    $q2=  'SELECT * from getimage($2)';
+                    $q2=  'SELECT * from getimage($1)';
                     $res = pg_query_params($dbconn, $q2, array($id));
 
                 
@@ -87,9 +89,8 @@
                 
                 
                 <div>
-                <img  style='width:200px; height:200px;' src="<?php if(strlen($save_path)>0){
-                    echo $save_path;
-                }
+                <img  style='width:200px; height:200px;' src="<?php 
+                echo $save_path;
                 ?>">
             </div>
             
@@ -131,11 +132,65 @@
 
         <div class="container" >
             <ul id="griglia">
-                <li ><a href="#"><img class="imgw200" src="../home/immagini/suppli.jpg" > <br>SUPPLI </a></li>
-                <li> <a href="#"> <img  class="imgw200" src="../home/immagini/Lasagna.jpg" ><br>  LASAGNA </a></li>
-                <li> <a href="#"> <img class="imgw200" src="../home/immagini/salmone-in-crosta.jpg" ><br> SALMONE IN CROSTA </a></li>
-                <li> <a href="#"> <img class="imgw200" src="../home/immagini/Zucchine-ripiene.jpg" ><br>  ZUCCHINE RIPIENE</a></li>
-                <li> <a href="#"> <img class="imgw200" src="../home/immagini/torta-ricotta-e-spinaci.jpg"><br>  TORTA RUSTICA </a></li> 
+
+
+
+
+
+            <?php
+
+            $uploaded=false;
+            $save_path='';           
+
+                
+                $query = 'SELECT * from ricetta where utente = $1';    
+                $result = pg_query_params($dbconn,$query,array($email));
+
+                    while($row=pg_fetch_assoc($result)){
+                        
+                    
+                        $nomer=$row['nomer'];
+
+                        $q4 = 'SELECT * from fotoricette where added_by = $1';
+                        $result1 = pg_query_params($dbconn, $q4, array($nomer));
+                        $line=pg_fetch_array($result1, null, PGSQL_ASSOC);
+                    
+                        $id = $line['id'];
+                        $save_path = "images/".$nomer.".jpeg";
+                    
+                    
+                      
+                        $q5=  'SELECT * from get_image($1)';
+                        $res = pg_query_params($dbconn, $q5, array($id));
+
+                
+                    
+
+                        if($res){
+
+                            $img = pg_fetch_object($res);
+                            $imgdata =$img->imgdata;
+                            $imgdata = substr($imgdata, 2);
+                            $bin = hex2bin($imgdata);
+                            file_put_contents($save_path,base64_decode($bin));
+
+                        }  
+                        
+            
+                        echo "<li>"."<a href='../ricetta/ricetta.php?name=$nomer'>"."<img  class='imgw200' src=".$save_path.">"."<br>".$nomer."</a>"."</li>";
+                       
+                   
+                    }
+                
+                    
+
+                ?>
+
+
+
+
+
+
             </ul>
 
         </div>

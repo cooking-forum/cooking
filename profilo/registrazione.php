@@ -30,10 +30,10 @@
 
 
                 $upload_dir=getcwd().DIRECTORY_SEPARATOR.'/uploads';
-                if($_FILES["inputImage"]["error"]==UPLOAD_ERR_PK){
+                if($_FILES["inputImage"]["error"]==UPLOAD_ERR_OK){
                     $temp_name=$_FILES["inputImage"]["tmp_name"];
                     $name=basename($_FILES["inputImage"]["name"]);
-                    $save_path=$$$upload_dir.$name;
+                    $save_path=$upload_dir.$name;
                     move_uploaded_file($temp_name,$save_path);
                     $uploaded=true;
     
