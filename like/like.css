@@ -44,15 +44,17 @@ img {
     background-color: #d8d8d8;
 }
 
-.btn{
+.btn {
     float: right;
-    background-color: #f89c39;
+    background-color: #f7cc9d;
     margin-top: 5px;
     margin-right: 20px;
-    color:rgb(154, 1, 154);
+    color:rgb(103, 0, 0);
     font-family:'Times New Roman', Times, serif;
-    border: 0;  
+    border: 1px;
+    border-color: black;  
 }
+
 
 h1{
     text-align: center;
