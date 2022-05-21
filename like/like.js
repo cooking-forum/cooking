@@ -31,7 +31,6 @@ let appLike = Vue.createApp({
         },
         
         getPicPath(ricetta) { return ricetta.image; }
-
     }
 });
 

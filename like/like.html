@@ -53,15 +53,19 @@
             <ul id="griglia">
                 <li v-for="(ricetta, index) in variants" :key="ricetta.id">    
                     <a href="#"> <img class="imgw200" :src="getPicPath(ricetta)"> <br> {{ricetta.name}} </a> <br>
-                    <div class="likeButtons" id="likeDiv"> Likes: {{ricetta.likes}}
-                        <br>
-                        <button class="btn" id="likeButton" v-on:click="changeStato(index)"> <i class="bi bi-chat-left-heart"></i> MI PIACE </button>
-                    </div>
+                    Likes: {{ricetta.likes}}
+                    <br>
 
-    
+                    <label>
+                        <input type="checkbox" @click="changeStato(index)" :on-icon="'mdi-heart'" :off-icon="'mdi-home'"> MI PIACE 
+                    </label>
                     
 
                     <!--
+                    <button class="likeButtons" type="button" @click="changeStato(index)" :class="[ { 'selected': selected} ]">
+                        <i class="bi bi-chat-left-heart"></i> MI PIACE 
+                    </button>
+
                     <a href="#"> <img class="imgw200" :src="getPicPath(ricetta)"> <br> {{ricetta.name}} </a> <br>
                     <div class="likeButtons" id="likeDiv '+{{index}}'"> Likes: {{ricetta.likes}}
                         <br>
