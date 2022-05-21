@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
     <link rel="stylesheet" href="style.css" /> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Forum Cucina</title>
 </head>
 <body >
-    <form action="" method="POST" ENCTYPE="multipart/form-data">
+    
    
   
     <div class="header">
         
-        <a class="btn btn-primary btn-lg" name="profiloBtn" href="../profilo/profilo.php?" role="button">
+        <a class="btn btn-primary btn-lg" name="profiloBtn" href="../profilo/profilo.php" role="button">
             Profilo Utente
         </a>
         <h1> Game of Fork </h1>   
@@ -27,32 +28,34 @@
                 <li><a href="#"> FORUM <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
                         <li><a href="#"> Partecipa ad una conversazione</a></li>
-                        <li><a href="#"> Inizia una chat </a></li>
+                        <li><a href="../chat/index.php"> Inizia una chat </a></li>
                     </ul>
                 </li>
                 <li><a href="#"> Home </a></li>
-                <li><a href="#"> Antipasti <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
+                <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
-                        <li><a href="#">Freddi</a></li>
-                        <li><a href="#"> Caldi </a></li>
+                        <li><a href="#"> Antipasti </a></li>
+                        <li><a href="#"> Primi </a></li>
+                        <li><a href="#"> Secondi </a></li>
+                        <li><a href="#"> Contorni </a></li>
+                        <li><a href="#"> Dolci </a></li>
                     </ul>
-                </li>
-                <li><a href="#"> Primi </a></li>
-                <li><a href="#"> Secondi <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
-                    <ul>
-                    <li><a href="#">Freddi</a></li>
-                    <li><a href="#"> Caldi </a></li>
-                    </ul>
-                </li>
-                <li><a href="#"> Contorni </a></li>
-                <li><a href="#"> Dolci </a></li>
+               
                 <li><a href="#"> Chi Siamo </a></li>
                 <li><a href="../ricette/form-ricette.html"> Crea Ricetta </a></li>
             </ul>
         </nav>
         
     </div>
-    <div id="container" style="float: right; text-align: justify; width: 60%;">
+
+
+    <div class="ok" style="float: right; text-align: justify; width: 60%; margin-top: 100px;">
+        <form class="modulo-ricerca" action="" method="post" style="margin-left:10px;">
+            <input id="search" type="text" name="inputTesto" placeholder="Cerca una ricetta..." required>
+            <input id="submit" type="submit" name="researchButton" value="CERCA">
+    </form>
+   <!-- <form action="" method="POST" ENCTYPE="multipart/form-data"> -->
+    <div id="container" >
        <ul id="griglia">
 
 
@@ -64,13 +67,63 @@
                 $uploaded=false;
                 $save_path='';
 
-                $dbconn = pg_connect("host=localhost dbname=registrazione port=5432 user=donia password=diag")
+                $dbconn = pg_connect("host=localhost dbname=forum port=5432 user=postgres password=Stella")
                         or die( 'Could not connect: ' . pg_last_error());
 
                 
+                    if(isset($_POST['researchButton'])){
+                        $testo=$_POST['inputTesto'];
+                        
+                        $result = pg_query($dbconn, "SELECT * FROM ricetta where (nomer LIKE '%($testo)%')");
+                        $trovati=pg_num_rows($result);
+                        if($trovati>0){
 
+
+                        while($row=pg_fetch_assoc($result)){
+                         
+                        
+                            $nomer=$row['nomer'];
+    
+                            $q3 = 'SELECT * from fotoricette where added_by = $1';
+                            $result1 = pg_query_params($dbconn, $q3, array($nomer));
+                            $line2=pg_fetch_array($result1, null, PGSQL_ASSOC);
+                        
+                            $id = $line2['id'];
+                            $save_path = "images/".$id.".jpeg";
+                        
+                            
+                            $q2=  'SELECT * from get_image($1)';
+                            $res = pg_query_params($dbconn, $q2, array($id));
+    
+                    
+                        
+    
+                            if($res){
+    
+                                $img = pg_fetch_object($res);
+                                $imgdata =$img->imgdata;
+                                $imgdata = substr($imgdata, 2);
+                                $bin = hex2bin($imgdata);
+                                file_put_contents($save_path,base64_decode($bin));
+                                
+    
+                            }  
+                            
+                            echo "<li>"."<a href='../ricetta/ricetta.php?name=$nomer'>"."<img  class='imgw200' src=".$save_path.">"."<br>".$nomer."</a>"."</li>";
+                        }
+                        
+                           
+                       
+                    }else{
+                            echo "Al momento non sono state pubblicate ricette con questo titolo";
+                        }
+
+                    }else{
                     
                     
+
+
+
                     $result = pg_query($dbconn, "SELECT * FROM ricetta");
 
                     while($row=pg_fetch_assoc($result)){
@@ -108,6 +161,7 @@
                        
                    
                     }
+                }
                 
                     
 
@@ -119,9 +173,9 @@
         
 
        </ul>
-
+     </div>
        
     </div>
-    
+                
 </body>
 </html>
