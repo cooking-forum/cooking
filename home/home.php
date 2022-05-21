@@ -74,7 +74,7 @@
                     if(isset($_POST['researchButton'])){
                         $testo=$_POST['inputTesto'];
                         
-                        $result = pg_query($dbconn, "SELECT * FROM ricetta where (nomer LIKE '%($testo)%')");
+                        $result = pg_query($dbconn, "SELECT * FROM ricetta where (nomer SIMILAR TO '%($testo)%') OR  (ingredienti SIMILAR TO '%($testo)%')");
                         $trovati=pg_num_rows($result);
                         if($trovati>0){
 
