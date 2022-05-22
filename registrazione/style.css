@@ -2,10 +2,9 @@ html,
 
 body {
   height: 100%;
-
 }
 
-body{
+body {
   align-content: center ;
   align-items: space-evenly;
   background-image: url(immagini/Sfondo.jpg);
@@ -20,9 +19,23 @@ body{
   background-position: center;
   background-size: contain;
   position: fixed;
-
 }
 
+.sinistra {
+  float: left; 
+  text-align: justify; 
+  width: 60%;
+}
+
+.label {
+  text-align: left;
+  width: 20%;
+  margin-top: 6px;
+  display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  padding: 12px 12px 12px 0;
+}
 
 .rst{
   float: center;
@@ -42,10 +55,7 @@ h1{
 .bd{
   margin-top: 100px;
   width: 100%;
-  
 }
-
-
 
 .destra li{
   list-style: none;
@@ -64,14 +74,11 @@ h1{
 .mb-3{
   width:100%;
   text-align: left;
-  
-  
 }
 
 .checkbox{
   font-weight: 400;
   width: 25px;
-  
 }
 
 .form-control{

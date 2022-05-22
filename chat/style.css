@@ -2,20 +2,18 @@ html,
 body{
   width: 100%;
   height: 100%;
-  background-color:rgb(254, 241, 225);
-  
+  background-image: url(../immagini/sfondochiaro.jpg);
 }
+
 .header{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  height:80px;
-  width:100%;
+  height: 80px;
+  width: 100%;
   z-index:2;
   background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242, 83, 83, 0.7)), url(../immagini/sfondo.jpg);
   background-position: center; 
   background-size: contain;
   position: fixed;
-  
-
 }
 
 .btn{
@@ -26,16 +24,16 @@ body{
   color:rgb(154, 1, 154);
   font-family:'Times New Roman', Times, serif;
   border: 0;
- 
 }
+
 .btn:hover{
- background-color:rgb(248, 248, 99);
- color:black;
+  background-color:rgb(248, 248, 99);
+  color:black;
 }
+
 h1{
   text-align: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 
@@ -47,15 +45,12 @@ h1{
 
 nav{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  height: 52px;
+  height: 50%;
   width: 20%;
+  max-width: 20%;
   position: fixed; /* il menu rimane fisso in alto*/
   left:40px;
   border-top: solid 1.5px black;
-  
- 
-  
-
 }
 
 nav ul{
@@ -65,46 +60,37 @@ nav ul{
   width: 100%;
   max-width: 1200px;
   display: inline-block;
-  
-  
-
 }
 
 nav ul ul{
-   display: none;
-   width: 100%;
-   border-top: solid 1.5px black;
-  
+  display: none;
+  width: 100%;
+  border-top: solid 1.5px black;
 }
 
 nav ul li{
   overflow:auto;
   border-bottom: solid 1.5px black;
-  
-
 }
 
 nav ul li:hover ul{
   display: block;
-  
-  
 }
+
 nav li a:hover{
   background-color:rgb(253, 86, 30);
   color:black;
   text-decoration:none;
-  
-  
 }
+
 nav ul li li{
   position: relative;
   float:none;
-  width: 100%;
- 
+  width: 100%; 
 }
+
 nav ul li li a {
   background-color: rgb(249, 226, 199);
-
 }
 
 nav ul li a{
@@ -116,148 +102,115 @@ nav ul li a{
   border-left: solid 1.5px black;
   border-right: solid 1.5px black;
   background-color: #fcb66c;
-  
-
 }
-
-
 
 
 /*destra*/
 .areatesto{
-  
   border: solid 2px black;
   width: 70%;
-  height: 30px;
-  
-
+  height: 10%;
 }
+
 .rst{
   font-size: 20px;
   border-radius: 5px;
   border-color: #ec8163;
   background-color: #ec8163;
-  margin-bottom: 40px;
-  
-  
+  margin-bottom: 40px;  
 }
 
 .rst:hover{
   background-color: rgb(243, 220, 118);
   color: black;
-
 }
 
 .messaggio{
-  float:left;
-  margin-top:10px;
-  margin-left:5px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
 .sc{
   margin-top: 100px;
   height: 100%;
-  width:80%;
+  width: 80%;
   text-align: center;
   border: 2px solid rgb(48, 47, 47);
   background-color: rgb(250, 201, 201);
 }
  
-  
-  
-
-
 .container{
-  
-  
-  margin-top:40px;
+  margin-top: 40px;
   overflow: auto;
   background-color: aliceblue;
-  height: 400px;
+  height: 80%;
   width: 100%;
-
-  
-  
-  
-  
 }
 
 .tabella2{
-  
   margin-top: 20px;
   margin-bottom: 20px;
   overflow: auto;
   width: 100%;
   background-color: aliceblue;
   scroll-behavior: initial;
-  
-  
-
 }
 
-
-
-
 .utente{
-  
-  position:relative;
+  position: relative;
   background:rgb(251, 247, 201);  
-  width:300px;
-  padding:10px; 
-  border-radius:5px;
-  margin:10px;
+  width: 300px;
+  padding: 10px; 
+  border-radius: 5px;
+  margin: 10px;
   text-align: left;
- }
+}
+
 .utente:before{
-  
-  content:"";
-  position:absolute;
-  width:0px;
-  height:0px;
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
   border: 10px solid;
   border-color: transparent rgb(251, 247, 201) transparent transparent;
-  left:-20px;
-  top:10px;
- }
+  left: -20px;
+  top: 10px;
+}
 
- .loggato{
+.loggato{
   margin-left: 53%;
-  position:relative;
+  position: relative;
   background:#d4ebf9;  
-  width:300px;
-  padding:10px; 
-  border-radius:5px;
+  width: 300px;
+  padding: 10px; 
+  border-radius: 5px;
   text-align: right;
- }
+}
+
  .loggato:before{
   margin-left: 53%;
-  content:"";
-  position:absolute;
-  width:0px;
-  height:0px;
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
   border: 10px solid;
   border-color: transparent transparent transparent #d4ebf9 ;
-  right:-20px;
-  top:10px;
- }
-
+  right: -20px;
+  top: 10px;
+}
 
 .mess2{
-  
   text-align: left;
- 
 }
 
 .mess1{
-  
   text-align: right;
- 
 }
+
 .nome{
   color:#fe0561;
 }
-
-
 
 .bottone{
   background-color: rgb(245, 198, 179);
@@ -267,8 +220,6 @@ nav ul li a{
   text-align: left;
   display: inline-block;
   font-size:15px;
-  
-  
 }
 
 .bottone:hover {
@@ -277,18 +228,16 @@ nav ul li a{
 
 ::-webkit-scrollbar{
   width: 10px;
-
 }
+
 ::-webkit-scrollbar-track{
   background: rgb(248, 145, 126);
-  
   /*border-radius: 30%;*/
 }
 
 ::-webkit-scrollbar-thumb{
   background: rgb(237, 48, 27);
   border-radius: 30%;
-
 }
 
 ::-webkit-scrollbar-thumb:hover{

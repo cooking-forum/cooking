@@ -24,7 +24,7 @@
                     <a href = ../login/login.html> Clicca qui per il login </a>";
                 }
 
-       else {
+            else {
                 $nome = $_POST["inputName"] ;
                 $pawd = md5($_POST["inputPassword"]) ;
 

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://unpkg.com/vue@3"></script>  <!-- per richiamare la libreria -->
+    <script src="//code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="stylesheet" href="like.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     
@@ -55,53 +56,11 @@
                     <a href="#"> <img class="imgw200" :src="getPicPath(ricetta)"> <br> {{ricetta.name}} </a> <br>
                     Likes: {{ricetta.likes}}
                     <br>
-
                     <label>
-                        <input type="checkbox" @click="changeStato(index)" :on-icon="'mdi-heart'" :off-icon="'mdi-home'"> MI PIACE 
+                        <input type="checkbox" id="myCheck" @click="changeStato(index)" hidden> 
+                        <p v-if="ricetta.selected == false"> <i class="bi bi-chat-left-heart"> non mi piace </i></p>
+                        <p v-else> <i class="bi bi-chat-left-heart-fill"> mi piace </i></p> 
                     </label>
-                    
-
-                    <!--
-                    <button class="likeButtons" type="button" @click="changeStato(index)" :class="[ { 'selected': selected} ]">
-                        <i class="bi bi-chat-left-heart"></i> MI PIACE 
-                    </button>
-
-                    <a href="#"> <img class="imgw200" :src="getPicPath(ricetta)"> <br> {{ricetta.name}} </a> <br>
-                    <div class="likeButtons" id="likeDiv '+{{index}}'"> Likes: {{ricetta.likes}}
-                        <br>
-                        <input type="radio" name="stato" id="like" value="LIKEvalue" v-on:click="incrementLivello(index)"/>
-                        <i class="bi bi-chat-left-heart"></i> LIKE
-                        <input type="radio" name="stato" id="dislike" value="DISLIKEvalue" v-on:click="decrementLivello(index)"/>
-                        <i class="bi bi-chat-left-heart-fill"></i> DISLIKE
-                    </div>
-                    
-                    
-                    <br>
-                    <b-form-radio-group id="btn-radios-2" v-model="selected" :options="options" size="lg" buttons> </b-form-radio-group>
-                    <br>
-                    <br>
-                    helohewoihgrou wrifejuprodiqèwpiedrèpq
-
-                    <br>
-                    <b-form-radio-group id="btn-radios-2" v-model="selected" :options="options" size="lg" buttons> </b-form-radio-group>
-                    <br>
-                    <br>
-                    helohewoihgrou wrifejuprodiqèwpiedrèpq
-
-                    <b-form-radio-group id="btn-radios-1" v-model="selected" :options="options" size="lg" buttons> </b-form-radio-group>
-
-                    <input type="radio" id="likeButton" v-model="scelto" v-on:click="incrementLivello(index)"/> 
-                    <label for="likeButton"> <i class="bi bi-chat-left-heart"></i> MI PIACE </label>
-                    <input type="radio" id="dislikeButton" v-model="scelto" v-on:click="decrementLivello(index)"/> 
-                    <label for="dislikeButton"> <i class="bi bi-chat-left-heart-fill"></i> NON MI PIACE PIÙ </label>
-                    
-                    <button id="likeButton" v-on:click="incrementLivello(index)" :disabled="dislikeButton"> <i class="bi bi-chat-left-heart"></i> MI PIACE </button>
-                    <button id="dislikeButton" v-on:click="decrementLivello(index)" :disabled="likeButton"> <i class="bi bi-chat-left-heart-fill"></i> NON MI PIACE PIÙ</button>
-
-                    <button id="likeButton" v-on:click="incrementLivello(index)"> MI PIACE </button>
-                    <button id="dislikeButton" v-on:click="decrementLivello(index)" v-bind:disabled="livello < 0" v-bind:class="{disabledButton: livello < 0}"> NON MI PIACE PIÙ</button>
-                    -->
-
                 </li>
             </ul>
         </div>
