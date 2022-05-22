@@ -100,7 +100,7 @@ h1{
     border-radius: 10px;
     overflow: hidden;
     padding: 8px;
-    width: 700px;
+    width: 60%;
   }
   
   .modulo-ricerca #search {
@@ -117,7 +117,7 @@ h1{
     box-sizing: border-box;
     height: 42px;
     padding: 10px;
-    width: 490px;
+    width: 70%;
   }
   
   .modulo-ricerca #search:-moz-placeholder,
@@ -140,7 +140,7 @@ h1{
     font: 15px Arial, Helvetica;
     padding: 0;
     text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
-    width: 100px;
+    width: 20%;
   }
   
   .modulo-ricerca #submit:hover,

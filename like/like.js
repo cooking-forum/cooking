@@ -4,11 +4,14 @@ let appLike = Vue.createApp({
             selectedVariant: 0,
             livello: 0,
             variants: [
-                {id:1, image:"../immagini/suppli.jpg", name:"Supplì", likes:0, selected: false},
-                {id:2, image:"../immagini/Lasagna.jpg", name:"Lasagna", likes:0, selected: false},
-                {id:3, image:"../immagini/salmone-in-crosta.jpg", name:"Salmone in crosta", likes:0, selected: false},
-                {id:4, image:"../immagini/Zucchine-ripiene.jpg", name:"Zucchine ripiene", likes:0, selected: false},
-                {id:5, image:"../immagini/torta-ricotta-e-spinaci.jpg", name:"Torta ricotta e spinaci", likes:0, selected: false}
+                {image:"../immagini/suppli.jpg", name:"Supplì", likes:0, selected: false},
+                {image:"../immagini/Lasagna.jpg", name:"Lasagna", likes:0, selected: false},
+                {image:"../immagini/salmone-in-crosta.jpg", name:"Salmone in crosta", likes:0, selected: false},
+                {image:"../immagini/Zucchine-ripiene.jpg", name:"Zucchine ripiene", likes:0, selected: false},
+                {image:"../immagini/torta-ricotta-e-spinaci.jpg", name:"Torta ricotta e spinaci", likes:0, selected: false},
+                {image:"../immagini/suppli.jpg", name:"Supplì", likes:0, selected: false},
+                {image:"../immagini/Lasagna.jpg", name:"Lasagna", likes:0, selected: false},
+                {image:"../immagini/salmone-in-crosta.jpg", name:"Salmone in crosta", likes:0, selected: false}
             ]
         }
     },
