@@ -5,7 +5,7 @@
     <?php
         session_start();
         
-        $dbconn = pg_connect("host=localhost dbname=registrazione port=5432 user=donia password=diag") or die("Impossibile connettersi: " . pg_last_error());
+        $dbconn = pg_connect("host=localhost dbname=forum port=5432 user=postgres password=Stella") or die("Impossibile connettersi: " . pg_last_error());
         
         if (!(isset($_POST['accessButton']))) { header("Location: ../home/index.html"); }
         else {
@@ -25,7 +25,7 @@
                 else {
                     $nome=$line['nome'];
                     $_SESSION['username']= "$email";
-                    header("Location: ../home/index.html");
+                    header("Location: ../home/home.php");
                     //echo "<a href = ../home/index.html>Premi qui per andare al tuo profilo utente </a>";
                 }
             }
