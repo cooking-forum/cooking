@@ -25,7 +25,7 @@
             }
 
 
-            $dbconn = pg_connect("host=localhost dbname=registrazione port=5432 user=donia password=diag")
+            $dbconn = pg_connect("host=localhost dbname=forum port=5432 user=postgres password=Stella")
                 or die( 'Could not connect: ' . pg_last_error());
            
         ?>
@@ -33,7 +33,7 @@
         <div class="header">
             <button class="btn btn-primary btn-lg" name="logoutBtn">Logout</button>
             
-            <li><a href="../home/home.php?"> <img class="tastohome" src="immagini/tastohome.jpg"></a></li>
+            <li><a href="../home/home.php"> <img class="tastohome" src="immagini/tastohome.jpg"></a></li>
             <h1> Game of Fork </h1>   
         </div>
         <?php
@@ -58,7 +58,7 @@
                     $result = pg_query_params($dbconn, $q1, array($email));
                     $line=pg_fetch_array($result, null, PGSQL_ASSOC);
 
-                    $q3 = 'SELECT * from productphotos where added_by = $1';
+                    $q3 = 'SELECT * from fotoutenti where added_by = $1';
                     $result1 = pg_query_params($dbconn, $q3, array($email));
                     $line2=pg_fetch_array($result1, null, PGSQL_ASSOC);
                     
@@ -77,7 +77,7 @@
                         $imgdata =$img->imgdata;
                         $imgdata = substr($imgdata, 2);
                         $bin = hex2bin($imgdata);
-                        file_put_contents($save_path,base64_decode($bin));
+                        file_put_contents($save_path, base64_decode($bin));
 
 
 
@@ -95,7 +95,7 @@
             </div>
             
                 <br> 
-                Nome Utente
+                Nome Utente:
                 <div class="pro">
                     
                     <?php
@@ -105,7 +105,7 @@
                     <br>
                 </div>
                 <br>
-                
+                Email:
                 <div class="em">
                     <?php
                         

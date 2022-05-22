@@ -8,7 +8,7 @@ body {
 body{
   align-content: center ;
   align-items: space-evenly;
-  background-image: url(immagini/Sfondo.jpg);
+  background-image: url(../immagini/sfondochiaro.jpg);
 }
 
 .header{
@@ -16,7 +16,7 @@ body{
   height: 80px;
   width: 100%;
   z-index: 2;
-  background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242,83,83,0.7)), url(immagini/sfondo.jpg);
+  background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242,83,83,0.7)), url(../immagini/sfondo.jpg);
   background-position: center;
   background-size: contain;
   position: fixed;

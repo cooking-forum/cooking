@@ -1,10 +1,10 @@
-<html>
+<!DOCTYPE html>
     <head></head>
     <body>
         <?php
         session_start();
         $uploaded=false;
-        $dbconn = pg_connect("host=localhost dbname=registrazione port=5432 user=donia password=diag")
+        $dbconn = pg_connect("host=localhost dbname=forum port=5432 user=postgres password=Stella")
                 or die( 'Could not connect: ' . pg_last_error());
         if(!(isset($_POST["signupButton"] ) ) ) {
             header ( " Location : index.html" );
@@ -24,7 +24,7 @@
                     <a href = ../login/login.html> Clicca qui per il login </a>";
                 }
 
-            else {
+       else {
                 $nome = $_POST["inputName"] ;
                 $pawd = md5($_POST["inputPassword"]) ;
 
@@ -56,11 +56,11 @@
 
                 $livello = 0;
                 $cookies = $_POST["cookies"] ;
-                $q2 = 'INSERT into utente values ($1,$2,$3,$4,$5,$6)' ;
-                $data = pg_query_params($dbconn, $q2, array($email,$nome,$pawd,$immagine,$cookies,$livello) ) ;
+                $q2 = 'INSERT into utente values ($1,$2,$3,$4,$5)' ;
+                $data = pg_query_params($dbconn, $q2, array($email,$nome,$pawd,$cookies,$livello) ) ;
                     if($data){
                         echo "<h1> Registrazione completata<br/></h1>";
-                        header("Location: ../home/index.html");
+                        header("Location: ../home/home.php");
                         
                     }
                 }
