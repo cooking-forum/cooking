@@ -14,7 +14,7 @@
 
 
      <?php
-       $dbconn = pg_connect("host=localhost dbname=prova port=5432 user=postgres password=Stella")
+       $dbconn = pg_connect("host=localhost dbname=forum port=5432 user=postgres password=Stella")
        or die( 'Could not connect: ' . pg_last_error());
        $testo='';
       $utente='';
@@ -40,6 +40,11 @@
     </div>
 
   <div class="sinistra" style="float: left; text-align: justify; width:20%;">
+
+  <form class="modulo-ricerca" action="cerca.php" style="margin-left: 100px;">
+            <input id="search" type="text" placeholder="Cerca una ricetta..." required>
+            <input id="submit" type="submit" value="CERCA">
+          </form>
   <nav> 
             <ul>
                 <li><a href="#"> FORUM <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
@@ -74,7 +79,7 @@
              <div class="tabella2">
               
               <?php
-               $db = pg_connect("host=localhost dbname=prova port=5432 user=postgres password=Stella")
+               $db = pg_connect("host=localhost dbname=forum port=5432 user=postgres password=Stella")
                or die( 'Could not connect: ' . pg_last_error());
                $result = pg_query($db,"SELECT * FROM chat");
                $email=$_SESSION["username"];
@@ -109,7 +114,7 @@
 
 </form>
 </div>  
-</div> 
+            </div> 
       
 </body>
 </html>
