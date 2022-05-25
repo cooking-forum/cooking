@@ -20,7 +20,7 @@
             <div class="sinistra" style="float: left; text-align: justify; width: 60%;">
             <h2 class="h3 mb-3 font-weight-normal">REGISTRAZIONE</h2>
             <h3 class="h3 mb-3 font-weight-normal">Unisciti alla nostra community!</h3>
-            <h4 class="h3 mb-3 font-weight-normal">Basteranno pochi e semplici passaggi...compila il form che trovi di seguito!</h4>
+            <h4 class="h3 mb-3 font-weight-normal"W>Basteranno pochi e semplici passaggi...compila il form che trovi di seguito!</h4>
         
             Nome utente:
             <input type="text" name="inputName" class="form-control" placeholder="Nome utente" required />
@@ -35,14 +35,22 @@
             <input type="file" name="inputImage"  placeholder="Immagine profilo" />
         
             
-        
+            <br>
+            <br>
+            
+             <div id="divRemember" class="mb-3">
+                <input type="checkbox" name="remember" />
+                <label for="remember">Remember me</label>
+            </div>
             <br>
             <br>
 
             Gestione dei cookies:
             <select name="cookies">
-            <option value="Rifiuto">Rifiuto</option>
-            <option value="Accetto">Accetto</option>
+            <option value="nessuna" selected></option>
+            <option value="Accetto solo i cookies necessari">Accetto solo i cookies necessari</option>
+            <option value="Accetto tutti i cookies">Accetto tutti i cookies</option>
+            <option value="Personalizza la tua scelta">Personalizza la tua scelta</option>
             </select>
             <br>
             <br>
