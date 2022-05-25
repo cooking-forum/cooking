@@ -11,7 +11,7 @@
 
         }else {
 
-            $email = $_POST["inputEmail"] ;
+            $email = $_POST["inputEmail"];
             $_SESSION['username'] = "$email";
 
 
@@ -30,10 +30,10 @@
 
 
                 $upload_dir=getcwd().DIRECTORY_SEPARATOR.'/uploads';
-                if($_FILES["inputImage"]["error"]==UPLOAD_ERR_PK){
+                if($_FILES["inputImage"]["error"]==UPLOAD_ERR_OK){
                     $temp_name=$_FILES["inputImage"]["tmp_name"];
                     $name=basename($_FILES["inputImage"]["name"]);
-                    $save_path=$$$upload_dir.$name;
+                    $save_path=$upload_dir.$name;
                     move_uploaded_file($temp_name,$save_path);
                     $uploaded=true;
     
@@ -55,9 +55,9 @@
 
 
                 $livello = 0;
-                $cookies = $_POST["cookies"] ;
-                $q2 = 'INSERT into utente values ($1,$2,$3,$4,$5,$6)' ;
-                $data = pg_query_params($dbconn, $q2, array($email,$nome,$pawd,$immagine,$cookies,$livello) ) ;
+                
+                $q2 = 'INSERT into utente values ($1,$2,$3,$4)' ;
+                $data = pg_query_params($dbconn, $q2, array($email,$nome,$pawd,$livello) ) ;
                     if($data){
                         echo "<h1> Registrazione completata<br/></h1>";
                         header("Location: ../home/index.html");
@@ -67,4 +67,5 @@
             }
         ?>
     </body>
+
 </html>

@@ -79,14 +79,14 @@
                         <li><a href="../chat/index.php"> Inizia una chat </a></li>
                     </ul>
                 </li>
-                <li><a href="#"> Home </a></li>
+                <li><a href="../home/home.php"> Home </a></li>
                 <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
-                        <li><a href="#"> Antipasti </a></li>
-                        <li><a href="#"> Primi </a></li>
-                        <li><a href="#"> Secondi </a></li>
-                        <li><a href="#"> Contorni </a></li>
-                        <li><a href="#"> Dolci </a></li>
+                        <li><a href="tipo.php?name=antipasti">Antipasti </a></li>
+                        <li><a href="tipo.php?name=primi"> Primi </a></li>
+                        <li><a href="tipo.php?name=secondi"> Secondi </a></li>
+                        <li><a href="tipo.php?name=contorni"> Contorni </a></li>
+                        <li><a href="tipo.php?name=dolci"> Dolci </a></li>
                     </ul>
                
                 <li><a href="#"> Chi Siamo </a></li>
@@ -171,12 +171,24 @@
             $line=pg_fetch_array($result1, null, PGSQL_ASSOC);
     
             $utente = $line['utente'];
-            echo "$utente";
+            echo "<li>"."<a href='../profilo/profiloPub.php?name=$utente'>".$utente."</a>"."</li>";
+            
         ?>
        </div>
        <br>
        <br>
        <br>
+       Tempo di preparazione
+       <div class="box">
+           <?php
+                 $tempoP = $line['tempoP'];
+                 echo "$tempoP" ;
+           ?>
+           
+       </div>
+       
+       <br> 
+
 
        Ingredienti
        <div class="box">

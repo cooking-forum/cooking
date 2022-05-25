@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content= "width=device-width, initial-scale=1" />
         <link rel= "stylesheet" href= " ../bootstrap/css/bootstrap.min.css" />
-        <link rel= "stylesheet" href="style.css" />
+        <link rel= "stylesheet" href="styleR.css" />
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script src="formValidation.js"></script>
     </head>
@@ -17,37 +17,32 @@
         <form action="registrazione.php" class="form-signin" method="POST" name="myForm" onSubmit="return validaForm()" ENCTYPE="multipart/form-data">
             
         <div class="bd">  
-            <div class="sinistra">
+            <div class="sinistra" style="float: left; text-align: justify; width: 60%;">
             <h2 class="h3 mb-3 font-weight-normal">REGISTRAZIONE</h2>
             <h3 class="h3 mb-3 font-weight-normal">Unisciti alla nostra community!</h3>
-            <h4 class="h3 mb-3 font-weight-normal"W>Basteranno pochi e semplici passaggi...compila il form che trovi di seguito!</h4>
+            <h4 class="h3 mb-3 font-weight-normal">Basteranno pochi e semplici passaggi...compila il form che trovi di seguito!</h4>
         
-            <label class="label"> Nome utente: </label>
+            Nome utente:
             <input type="text" name="inputName" class="form-control" placeholder="Nome utente" required />
             <br>
-            <label class="label"> Email address: </label>
+            Email:
             <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required />
             <br>
-            <label class="label"> Password </label>
+            Password:
             <input type="password" name="inputPassword" class="form-control" placeholder="Password" required />    
             <br>
-            <label class="label"> Immagine profilo: </label>
+            Immagine Profilo:
             <input type="file" name="inputImage"  placeholder="Immagine profilo" />
         
             
-            <br>
-            <br>
-            
-             
+        
             <br>
             <br>
 
             Gestione dei cookies:
             <select name="cookies">
-            <option value="nessuna" selected></option>
-            <option value="Accetto solo i cookies necessari">Accetto solo i cookies necessari</option>
-            <option value="Accetto tutti i cookies">Accetto tutti i cookies</option>
-            <option value="Personalizza la tua scelta">Personalizza la tua scelta</option>
+            <option value="Rifiuto">Rifiuto</option>
+            <option value="Accetto">Accetto</option>
             </select>
             <br>
             <br>

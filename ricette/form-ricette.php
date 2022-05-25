@@ -23,6 +23,7 @@
             else {
                 
                 $tipo = $_POST["tipo"];
+                $tempoP = $_POST["tempoP"];
                 $proc = $_POST["procedimento"];
                 $ingr = $_POST["ingredienti"];
                 
@@ -55,8 +56,8 @@
 
 
 
-                $q2 = 'INSERT into ricetta values ($1,$2,$3,$4,$5)' ;
-                $data2 = pg_query_params($dbconn, $q2, array($nomer,$utente,$tipo,$proc,$ingr));
+                $q2 = 'INSERT into ricetta values ($1,$2,$3,$4,$5,$6)' ;
+                $data2 = pg_query_params($dbconn, $q2, array($nomer,$utente,$tempoP,$tipo,$proc,$ingr));
 
                 if ($data2) {
                     echo "Ricetta inserita con successo!!";
