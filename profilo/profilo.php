@@ -185,6 +185,8 @@
                     
 
                 ?>
+                
+                 <li> <a href="../ricette/form-ricette.html"> <img style="width:200px; height:200px; margin-left:60px; margin-right:60px;" src="../immagini/plusar.png"> <br>Crea la tua ricetta</a>
 
 
 
