@@ -158,8 +158,9 @@ nav ul li a{
 .des{
     border:solid 2px black;
     width: 80%;
-    height: 200px;    
+    height: auto;    
     background-color:beige;
+    padding: 10px;
 }
 
 

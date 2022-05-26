@@ -75,8 +75,7 @@
             <ul>
                 <li><a href="#"> FORUM <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
-                        <li><a href="#"> Partecipa ad una conversazione</a></li>
-                        <li><a href="../chat/index.php"> Inizia una chat </a></li>
+                    <li><a href="../chat/index.php"> Partecipa alla chat </a></li>
                     </ul>
                 </li>
                 <li><a href="../home/home.php"> Home </a></li>
@@ -120,7 +119,7 @@
             $line2=pg_fetch_array($result, null, PGSQL_ASSOC);
                     
             $id = $line2['id'];
-            $save_path = "images/".$nomer.".jpeg";
+            $save_path = "images/".$nomer.".jpg";
                     
                         
             $q3=  'SELECT * from get_image($1)';
