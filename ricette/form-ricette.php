@@ -7,7 +7,7 @@
         $utente=$_SESSION['username'];
        
 
-        $dbconn = pg_connect("host=localhost port=5432 dbname=registrazione user=donia password=diag")
+        $dbconn = pg_connect("host=localhost port=5432 dbname=forum user=postgres password=Stella")
                         or die("Impossibile connettersi: " . pg_last_error());
 
         if(!(isset($_POST["submitButton"] ) ) ) {
@@ -26,7 +26,7 @@
                 $tempoP = $_POST["tempoP"];
                 $proc = $_POST["procedimento"];
                 $ingr = $_POST["ingredienti"];
-                
+                $likes=0;
 
 
                 // foto
@@ -47,7 +47,7 @@
                         $query="call save_fotoricette($1,$2)";
                         $res=pg_query_params($dbconn,$query,array(base64_encode($fbytes),"$nomer"));
                         if($res){
-                            echo 'saved'.strlen(base64_encode($fbytes));
+                             'saved'.strlen(base64_encode($fbytes));
                         }
                     }
                 }
@@ -56,11 +56,13 @@
 
 
 
-                $q2 = 'INSERT into ricetta values ($1,$2,$3,$4,$5,$6)' ;
-                $data2 = pg_query_params($dbconn, $q2, array($nomer,$utente,$tempoP,$tipo,$proc,$ingr));
+                $q2 = 'INSERT into ricetta values ($1,$2,$3,$4,$5,$6,$7)' ;
+                $data2 = pg_query_params($dbconn, $q2, array($nomer,$utente,$tipo,$proc,$ingr,$likes,$tempoP));
 
                 if ($data2) {
-                    echo "Ricetta inserita con successo!!";
+
+                    echo "<h1> Ricetta inserita con successo <br/></h1>";
+                        header("Location: ../home/home.php");
                 }
                 
                 

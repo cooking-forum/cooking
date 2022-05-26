@@ -10,7 +10,7 @@ body {
     height:80px;
 	width:100%;
 	z-index:2;
-    background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242, 83, 83, 0.7)), url(../immagini/8272e677-929e-439f-ba34-6ab8ef84edc9.jpeg);
+    background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242, 83, 83, 0.7)), url(../immagini/sfondo.jpg);
     background-position: center; 
     background-size: contain;
     position: fixed;
@@ -34,6 +34,21 @@ h3 {
     font-size: 20px;
 }
 
+.tastohome{
+    float:left;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left:20px; 
+    border-radius: 30px;
+    
+}
+
+.tastohome:hover{
+    width: 55px;
+    height: 55px;
+    margin-left: 15px;
+}
 .ricetta{
     width:100%;
     margin-top: 20px;
