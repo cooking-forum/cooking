@@ -104,7 +104,7 @@
             <div class="destra" style="float: right; text-align: justify; width: 40%;">
             Livello: 
                 <?php
-                     $email=$_SESSION['username'];
+                    $email=$_GET['name'];
                      $q4=pg_query("SELECT SUM(likes) as l from ricetta where utente='$email'");
                      $row=pg_fetch_assoc($q4);
                      $sum=$row['l'];
@@ -120,7 +120,7 @@
                 Numero Ricette: 
 
                 <?php
-                $email=$_SESSION['username'];
+                 $email=$_GET['name'];
                 $q5="SELECT * from ricetta where utente='$email'";
                 $res=pg_query($q5);
                 $count=pg_num_rows($res);
@@ -141,7 +141,8 @@
             <?php
 
             $uploaded=false;
-            $save_path='';           
+            $save_path='';   
+            $email=$_GET['name'];        
 
                 
                 $query = 'SELECT * from ricetta where utente = $1';    
@@ -151,18 +152,19 @@
                         
                     
                         $nomer=$row['nomer'];
+                        $likes=$row['likes'];
 
-                        $q4 = 'SELECT * from fotoricette where added_by = $1';
-                        $result1 = pg_query_params($dbconn, $q4, array($nomer));
+                        $q6 = 'SELECT * from fotoricette where added_by = $1';
+                        $result1 = pg_query_params($dbconn, $q6, array($nomer));
                         $line=pg_fetch_array($result1, null, PGSQL_ASSOC);
                     
                         $id = $line['id'];
-                        $save_path = "images/".$nomer.".jpg";
+                        $save_path = "images/".$id.".jpg";
                     
                     
                       
-                        $q5=  'SELECT * from get_image($1)';
-                        $res = pg_query_params($dbconn, $q5, array($id));
+                        $q7=  'SELECT * from get_image($1)';
+                        $res = pg_query_params($dbconn, $q7, array($id));
 
                 
                     
@@ -178,7 +180,10 @@
                         }  
                         
             
-                        echo "<li>"."<a href='../ricetta/ricetta.php?name=$nomer'>"."<img  class='imgw200' src=".$save_path.">"."<br>".$nomer."</a>"."</li>";
+                        echo "<li>";
+                        echo "<a href='../ricetta/ricetta.php?name=$nomer'>"."<img  class='imgw200' src=".$save_path.">"."<br>".$nomer. "</a>"."<br>";
+                        echo "<div class=box> Like: ". $likes  ."</div> ";
+                        echo "</li>";
                        
                    
                     }
