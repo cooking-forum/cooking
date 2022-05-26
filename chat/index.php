@@ -41,30 +41,27 @@
 
   <div class="sinistra" style="float: left; text-align: justify; width:20%;">
 
-  <form class="modulo-ricerca" action="cerca.php" style="margin-left: 100px;">
-            <input id="search" type="text" placeholder="Cerca una ricetta..." required>
-            <input id="submit" type="submit" value="CERCA">
-          </form>
+  
   <nav> 
             <ul>
                 <li><a href="#"> FORUM <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
-                        <li><a href="#"> Partecipa ad una conversazione</a></li>
-                        <li><a href="../chat/index.php"> Inizia una chat </a></li>
+                        
+                        <li><a href="../chat/index.php"> Partecipa alla chat </a></li>
                     </ul>
                 </li>
-                <li><a href="#"> Home </a></li>
+                <li><a href="../home/home.php"> Home </a></li>
                 <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
-                        <li><a href="#"> Antipasti </a></li>
-                        <li><a href="#"> Primi </a></li>
-                        <li><a href="#"> Secondi </a></li>
-                        <li><a href="#"> Contorni </a></li>
-                        <li><a href="#"> Dolci </a></li>
+                    <li><a href="../home/tipo.php?name=antipasti">Antipasti </a></li>
+                        <li><a href="../home/tipo.php?name=primi"> Primi </a></li>
+                        <li><a href="../home/tipo.php?name=secondi"> Secondi </a></li>
+                        <li><a href="../home/tipo.php?name=contorni"> Contorni </a></li>
+                        <li><a href="../home/tipo.php?name=dolci"> Dolci </a></li>
                     </ul>
                
                 <li><a href="#"> Chi Siamo </a></li>
-                <li><a href="#"> Crea Ricetta </a></li>
+                <li><a href="../ricette/form-ricette.html"> Crea Ricetta </a></li>
             </ul>
         </nav>
   </div>
@@ -89,9 +86,9 @@
                     echo "<div class='loggato' >" ."<div class='nome'>". $row['utente']."</div>"."<div class='mess1'>". $row['testo']."</div>". "</div>";
                     echo "<br>";
                    }else{
-                 
+                 $utente=$row['utente'];
                  //echo "<tr>";
-                 echo "<div class='utente' >" ."<div class='nome'>". $row['utente']."</div>"."<div class='mess2'>". $row['testo']."</div>". "</div>";
+                 echo "<div class='utente' >" ."<div class='nome'>". "<a href='../profilo/profiloPub.php?name=$utente'>".$utente."</a>"."</div>"."<div class='mess2'>". $row['testo']."</div>". "</div>";
                 echo "<br>";
               }
             
