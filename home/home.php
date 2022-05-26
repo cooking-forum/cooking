@@ -27,18 +27,17 @@
             <ul>
                 <li><a href="#"> FORUM <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
-                        <li><a href="#"> Partecipa ad una conversazione</a></li>
-                        <li><a href="../chat/index.php"> Inizia una chat </a></li>
+                    <li><a href="../chat/index.php"> Partecipa alla chat </a></li>
                     </ul>
                 </li>
                 <li><a href="#"> Home </a></li>
                 <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
-                        <li><a href="#"> Antipasti </a></li>
-                        <li><a href="#"> Primi </a></li>
-                        <li><a href="#"> Secondi </a></li>
-                        <li><a href="#"> Contorni </a></li>
-                        <li><a href="#"> Dolci </a></li>
+                    <li><a href="tipo.php?name=antipasti">Antipasti </a></li>
+                        <li><a href="tipo.php?name=primi"> Primi </a></li>
+                        <li><a href="tipo.php?name=secondi"> Secondi </a></li>
+                        <li><a href="tipo.php?name=contorni"> Contorni </a></li>
+                        <li><a href="tipo.php?name=dolci"> Dolci </a></li>
                     </ul>
                
                 <li><a href="#"> Chi Siamo </a></li>
@@ -89,7 +88,7 @@
                             $line2=pg_fetch_array($result1, null, PGSQL_ASSOC);
                         
                             $id = $line2['id'];
-                            $save_path = "images/".$id.".jpeg";
+                            $save_path = "images/".$id.".jpg";
                         
                             
                             $q2=  'SELECT * from get_image($1)';
@@ -130,13 +129,14 @@
                          
                         
                         $nomer=$row['nomer'];
+                        $likes=$row['likes'];
 
                         $q3 = 'SELECT * from fotoricette where added_by = $1';
                         $result1 = pg_query_params($dbconn, $q3, array($nomer));
                         $line2=pg_fetch_array($result1, null, PGSQL_ASSOC);
                     
                         $id = $line2['id'];
-                        $save_path = "images/".$id.".jpeg";
+                        $save_path = "images/".$id.".jpg";
                     
                         
                         $q2=  'SELECT * from get_image($1)';
@@ -156,7 +156,10 @@
 
                         }  
                         
-                        echo "<li>"."<a href='../ricetta/ricetta.php?name=$nomer'>"."<img  class='imgw200' src=".$save_path.">"."<br>".$nomer."</a>"."</li>";
+                        echo "<li>";
+                        echo "<a href='../ricetta/ricetta.php?name=$nomer'>"."<img  class='imgw200' src=".$save_path.">"."<br>".$nomer. "</a>"."<br>";
+                        echo "<div class=box> Like: ". $likes  ."</div> ";
+                        echo "</li>";
                         
                        
                    
