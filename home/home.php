@@ -30,7 +30,7 @@
                     <li><a href="../chat/index.php"> Partecipa alla chat </a></li>
                     </ul>
                 </li>
-                <li><a href="#"> Home </a></li>
+                <li><a href="../home/home.php"> Home </a></li>
                 <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
                     <ul>
                     <li><a href="tipo.php?name=antipasti">Antipasti </a></li>
