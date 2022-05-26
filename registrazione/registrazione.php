@@ -55,9 +55,9 @@
 
 
                 $livello = 0;
-                $cookies = $_POST["cookies"] ;
-                $q2 = 'INSERT into utente values ($1,$2,$3,$4,$5)' ;
-                $data = pg_query_params($dbconn, $q2, array($email,$nome,$pawd,$cookies,$livello) ) ;
+                
+                $q2 = 'INSERT into utente values ($1,$2,$3,$4)' ;
+                $data = pg_query_params($dbconn, $q2, array($email,$nome,$pawd,$livello) ) ;
                     if($data){
                         echo "<h1> Registrazione completata<br/></h1>";
                         header("Location: ../home/home.php");

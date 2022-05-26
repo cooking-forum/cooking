@@ -29,28 +29,29 @@
             <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required />
             <br>
             Password:
-            <input type="password" name="inputPassword" class="form-control" placeholder="Password" required />    
+            <br>
+            <input type="password" id="txt" name="inputPassword" class="form-control" onkeyup="validator()" placeholder="Password"  autocomplete="off" value="">
+            <div id="ProgressBar">
+                  <div id="bar">
+                   </div>
+                   <p id="alert">
+                   </p>
+            </div> 
             <br>
             Immagine Profilo:
-            <input type="file" name="inputImage"  placeholder="Immagine profilo" />
+            <input type="file" name="inputImage"  placeholder="Immagine profilo" required/>
         
             
             <br>
             <br>
             
-             <div id="divRemember" class="mb-3">
-                <input type="checkbox" name="remember" />
-                <label for="remember">Remember me</label>
-            </div>
-            <br>
-            <br>
+            
 
             Gestione dei cookies:
-            <select name="cookies">
-            <option value="nessuna" selected></option>
+            <select name="cookies" required>
+            <option></option>
             <option value="Accetto solo i cookies necessari">Accetto solo i cookies necessari</option>
-            <option value="Accetto tutti i cookies">Accetto tutti i cookies</option>
-            <option value="Personalizza la tua scelta">Personalizza la tua scelta</option>
+           
             </select>
             <br>
             <br>
@@ -64,7 +65,7 @@
         </form>
         </div>
         <div class="destra" style="float: right; text-align: justify; width:40%;">
-            <li><img class="foto" src="immagini/foto.jpg"></li>
+            <li><img class="foto" src="../immagini/foto.jpg"></li>
         </div>
     </div>
     
