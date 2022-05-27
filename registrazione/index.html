@@ -1,73 +1,56 @@
 <html>
-    <head>
-        <title>Pagina di registrazione</title>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content= "width=device-width, initial-scale=1" />
-        <link rel= "stylesheet" href= " ../bootstrap/css/bootstrap.min.css" />
-        <link rel= "stylesheet" href="styleR.css" />
-        <script src="../bootstrap/js/bootstrap.min.js"></script>
-        <script src="formValidation.js"></script>
-    </head>
+<head>
+    <title>Pagina di registrazione</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content= "width=device-width, initial-scale=1" />
+    <link rel= "stylesheet" href= " ../bootstrap/css/bootstrap.min.css" />
+    <link rel= "stylesheet" href="styleR.css" />
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="formValidation.js"></script>
+</head>
 
-    <body>
-        <div class="header">
-            <h1>Game of Fork</h1>
-        </div>
-    
+<body>
+    <div class="header">
+        <h1>Game of Fork</h1>
+    </div>
+
+    <div class="centralBox">
         <form action="registrazione.php" class="form-signin" method="POST" name="myForm" onSubmit="return validaForm()" ENCTYPE="multipart/form-data">
-            
-        <div class="bd">  
-            <div class="sinistra" style="float: left; text-align: justify; width: 60%;">
-            <h2 class="h3 mb-3 font-weight-normal">REGISTRAZIONE</h2>
-            <h3 class="h3 mb-3 font-weight-normal">Unisciti alla nostra community!</h3>
-            <h4 class="h3 mb-3 font-weight-normal"W>Basteranno pochi e semplici passaggi...compila il form che trovi di seguito!</h4>
-        
-            Nome utente:
+            <h2> REGISTRAZIONE </h2>
+            <h3> Unisciti alla nostra community! </h3>
+            <h3> Basteranno pochi e semplici passaggi...compila il form che trovi di seguito! </h3>
+    
+            <label class="label"> Nome utente </label>
             <input type="text" name="inputName" class="form-control" placeholder="Nome utente" required />
             <br>
-            Email:
+            <label class="label"> Email address </label>
             <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required />
             <br>
-            Password:
-            <br>
+            <label class="label"> Password </label>
             <input type="password" id="txt" name="inputPassword" class="form-control" onkeyup="validator()" placeholder="Password"  autocomplete="off" value="">
             <div id="ProgressBar">
-                  <div id="bar">
-                   </div>
-                   <p id="alert">
-                   </p>
+                <div id="bar"> </div>
+                <p id="alert"> </p>
             </div> 
             <br>
-            Immagine Profilo:
+            <label class="label"> Immagine profilo: </label>
             <input type="file" name="inputImage"  placeholder="Immagine profilo" required/>
         
-            
             <br>
             <br>
-            
-            
-
-            Gestione dei cookies:
-            <select name="cookies" required>
-            <option></option>
-            <option value="Accetto solo i cookies necessari">Accetto solo i cookies necessari</option>
-           
+    
+            <label class="label"> Gestione dei cookies </label>
+            <select class="tipologia" name="cookies" required>
+                <option></option>
+                <option value="Accetto solo i cookies necessari">Accetto solo i cookies necessari</option>
             </select>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            
-            <input class="rst" type="reset" value="Reset">
-            <button class="rst" name="signupButton" buttontype="submit">Invia</button>
 
+            <button class="rst" name="signupButton" buttontype="submit"> Invia </button>
+            <input class="rst" type="reset" value="Reset">
         </form>
-        </div>
-        <div class="destra" style="float: right; text-align: justify; width:40%;">
-            <li><img class="foto" src="../immagini/foto.jpg"></li>
-        </div>
     </div>
-    
-    </body>
+</div>
+
+</body>
 </html>

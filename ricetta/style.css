@@ -1,108 +1,106 @@
 html,
 body{
-    height:100%;
-    width: 100%;
-    background-image: url(../immagini/sfondochiaro.jpg);
+  width: 100%;
+  background-color:rgb(254, 241, 225);
 }
 
 .header{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    height:80px;
-	width:100%;
-	z-index:2;
-    background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242, 83, 83, 0.7)), url(../immagini/sfondo.jpg);
-    background-position: center; 
-    background-size: contain;
-    position: fixed;
-    
-
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  height:80px;
+  width:100%;
+  z-index:2;
+  background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242, 83, 83, 0.7)), url(../immagini/sfondo.jpg);
+  background-position: center; 
+  background-size: contain;
+  position: fixed;
 }
 
 .btn{
-    float: right;
-    background-color: #f89c39;
-    margin-top: 5px;
-    margin-right: 20px;
-    color:rgb(154, 1, 154);
-    font-family:'Times New Roman', Times, serif;
-    border: 0;
-   
+  float: right;
+  margin-top: 18px;
+  margin-right: 60px;
+  color:rgb(154, 1, 154);
+  font-family:'Times New Roman', Times, serif;
+  font-size:15px;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  border: 0;
+  background-color: rgb(245, 198, 179);
+  border: 2px solid rgb(231, 123, 34);
+  border-radius: 6px;
 }
-.btn:hover{
-   background-color:rgb(248, 248, 99);
-   color:black;
+
+.btn:hover {
+  background-color:rgb(248, 248, 99);
+  color:black;
 }
-h1{
+
+h1 {
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+    padding-top: 12px;
+    margin-left: 120px;
+    font-size: 45px;
 }
 
 .sinistra{
-    margin-top:100px;
+    margin-top: 140px;
+    float: left; 
+    text-align: justify; 
+    width: 15%;
 }
-
+  
 nav{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     height: 52px;
-    width: 20%;
+    width: 10%;
     position: fixed; /* il menu rimane fisso in alto*/
-    left:40px;
-    border-top: solid 1.5px black;
-    
-   
-    
-
+    left: 30px;
 }
-
-nav ul{
+  
+nav ul {
     list-style:none; /*spariscono pallini*/
     margin: 0 auto;
     padding: 0;
     width: 100%;
     max-width: 1200px;
     display: inline-block;
-    
-    
-
+    border-top: solid 1.5px black; 
 }
-
+  
 nav ul ul{
-     display: none;
-     width: 100%;
-     border-top: solid 1.5px black;
-    
+    display: none;
+    width: 100%;
+    border-top: solid 1.5px black;
 }
-
+  
 nav ul li{
     overflow:auto;
-    border-bottom: solid 1.5px black;
-    
-
 }
-
+  
 nav ul li:hover ul{
     display: block;
-    
-    
+    text-decoration:none;
 }
+  
 nav li a:hover{
     background-color:rgb(253, 86, 30);
     color:black;
-   
+    text-decoration:none;
 }
+  
 nav ul li li{
     position: relative;
     float:none;
     width: 100%;
-   
+    border-bottom: solid 1.5px black;  
 }
+  
 nav ul li li a {
     background-color: rgb(249, 226, 199);
-
 }
-
-nav ul li a{
+  
+nav ul li a {
     display: block;
     text-decoration:none;
     color:rgb(154, 1, 154);
@@ -110,121 +108,317 @@ nav ul li a{
     box-sizing: content-box;
     border-left: solid 1.5px black;
     border-right: solid 1.5px black;
+    border-bottom: solid 1.5px black;  
     background-color: #fcb66c;
-    
-
+}
+  
+.bi bi-caret-down-fill {
+    float:right;
 }
 
 .destra{
-    margin-top:100px;
+    float: right; 
+    text-align: justify; 
+    width: 85%;
+    height: 20%; 
+    padding-left: 80px;;
+    margin-right: 60px;
+    margin-left: 30px;
 }
 
-.button{
-    
+h2 {
+    width: 100%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    margin-top: -5px;
+    padding-right: 450px;
+    margin-bottom: 25px;
+}
+  
+.button{  
     background-color: rgb(249, 226, 199);
     margin-top: 5px;
     margin-right: 20px;
     color:rgb(154, 1, 154);
     font-family:'Times New Roman', Times, serif;
-    border: 0;
-   
+    border: 0; 
 }
+
 .button:hover{
    background-color:rgb(248, 248, 99);
    color:black;
 }
 
-
 .button:visited{
     background-color: red;
 }
 
-.box{
-    border:solid 2px black;
-    width: 40%;
-    background-color:beige;
+.cibo{
+    width: 620px;
+    height: 470px;
+    float:right;
+    border: 2px solid #f89c39;
+    margin-top: 30px;
+    margin-right: 500px;
 }
 
-.cibo{
-    width: 340px;
-    height: 200px;
-    float:right;
-    border:solid 4px black;
-    margin-right: 10px;
-   
+.littleBox {
+    width: 30%;
+    height: 10%;
+    padding: 20px 10px 10px 10px;
+    border: 2px solid rgb(231, 123, 34);
+    border-radius: 12px;
+    text-align: left;
+    background-image: url(../immagini/sfondochiaro.jpg);
+    margin-bottom: 45px;
+}
 
+h3 {
+    width: 60%;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+.box{
+    width: 40%;
+    background-color:rgb(249, 188, 170);
 }
 
 .des{
-    border:solid 2px black;
     width: 80%;
     height: auto;    
-    background-color:beige;
     padding: 10px;
+    padding: 20px 10px 10px 10px;
+    border: 2px solid rgb(231, 123, 34);
+    border-radius: 12px;
+    text-align: left;
+    background-image: url(../immagini/sfondochiaro.jpg);
+    margin-bottom: 45px;
 }
 
 
 /*COMMENTI */
-.sc{
-   
-    height: 100%;
-    width:80%;
-    text-align: center;
-    border: 2px solid rgb(48, 47, 47);
-    background-color: beige;
-    margin-bottom: 100px;
-  }
+.comm{
+    margin-top:100px;
+}
 
+.sc {
+    width:80%;
+    height: 100%;
+    text-align: center;
+    padding: 20px 10px 10px 10px;
+    border: 2px solid rgb(231, 123, 34);
+    border-radius: 12px;
+    text-align: left;
+    background-image: url(../immagini/sfondochiaro.jpg);
+    margin-bottom: 30px;
+}
 
 .con{
     margin-top:20px;
     overflow: auto;
-    background-color: beige;
+    background-color: rgb(255, 253, 249);
     height: 200px;
     width: 100%;
-   
-      
-  }
+}
   
-  .tabella2{
-    
+.tabella2{
     margin-top: 20px;
     margin-bottom: 20px;
     overflow: auto;
     width: 100%;
     background-color: beige;
     scroll-behavior: initial;
-    
-    
-  
-  }
+}
 
-  .bottone{
+.bottone{
     background-color: rgb(245, 198, 179);
     border: 2px solid rgb(231, 123, 34);
     border-radius: 6px;
+    font-family:'Times New Roman', Times, serif;
+    font-size:15px;
     color: rgb(0, 0, 0);
     text-align: left;
     display: inline-block;
     font-size:15px;
-    
-    
-  }
-  
-  .bottone:hover {
-    background-color: rgb(243, 151, 75);
-  }
+}
 
-  .areatesto{
-  
+.bottone:hover {
+    background-color: rgb(243, 151, 75);
+}
+
+.areatesto{
     border: solid 2px black;
     width: 70%;
     height: 30px;
-  
-  }
-  
-  .comm{
-      margin-top:100px;
-  }
+}
 
-  
+
+
+/* ---------- TABLET ---------- */
+
+@media screen and (max-width: 768px){
+    .header{
+        height:50px;
+    }
+      
+    .btn{
+        font-size: x-small;
+        margin-right: 35px;
+        margin-top: 10px;
+    }
+    
+    h1 {
+        font-size: 25px;;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+    .sinistra {
+        width:15%;
+        margin-top: 70px;
+    }
+      
+    nav{
+        height: 45px;
+        width: 100%;
+        margin-left: 50px;
+    }
+    
+    nav ul{
+        display: flex;
+        border-top: none;
+    }
+
+    nav ul li{
+        border-top: solid 1.5px black;
+    }
+      
+    nav ul li a {
+        font-size: large;
+    }
+    
+    .bi bi-caret-down-fill {
+        float: right;
+        size: x-small;
+    }
+
+    .destra{
+        width: 95%;
+        height: 50%;
+        margin-top: 30px;
+        margin-right: 50px;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 45px;
+        padding-top: 90px;
+        padding-right: 70px;
+    }
+
+    .cibo{
+        width: 620px;
+        height: 470px;
+        float:right;
+        border: 2px solid #f89c39;
+        margin-top: 30px;
+        margin-right: 30px;
+    }
+
+    .littleBox {
+        width: 95%;
+        height: 10%;
+        padding: 20px 8px 10px 8px;
+        margin-top: 490px;
+        margin-bottom: 45px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    .des{
+        width: 95%;
+    }
+
+    .sc {
+        width: 95%;
+    }
+
+    .con {
+        height: 300px;
+    }
+}
+
+
+
+/* ---------- MOBILE L ---------- */
+
+@media screen and (max-width: 425px){
+    .btn{
+        font-size: x-small;
+        margin-right: 30px;
+    }
+
+    h1 {
+        font-size: 25px;;
+        margin-top: 10px;
+        margin-left: 110px;
+    }
+
+    .sinistra {
+        width: 75%;
+        margin-top: 70px;
+    }
+    
+    nav{
+        height: 45px;
+        width: 100%;
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    nav ul li a {
+        font-size: x-small;
+    }
+
+    .destra{
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: 40px;
+        padding-right: 1px;
+    }
+
+    .cibo{
+        width: 350px;
+        height: 230px;
+        margin-right: -10px;
+    }
+
+    .littleBox {
+        width: 100%;
+        height: 10%;
+        padding: 20px 1px 10px 1px;
+        margin-top: 260px;
+        margin-bottom: 45px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    .des{
+        width: 100%;
+    }
+
+    .sc {
+        width: 100%;
+    }
+}

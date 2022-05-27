@@ -1,144 +1,246 @@
 html,
 body{
-    height: 100%;
     width: 100%;
-    background-image: url(../immagini/sfondochiaro.jpg);
+    background-color:rgb(254, 241, 225);
 }
 
 .header{
-    font-family:'Times New Roman', Times, serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     height:80px;
-	width:100%;
-	z-index:2;
+    width:100%;
+    z-index:2;
     background-image: linear-gradient(rgba(240, 173, 214, 0.7),rgba(242, 83, 83, 0.7)), url(../immagini/sfondo.jpg);
     background-position: center; 
     background-size: contain;
     position: fixed;
-    
-
 }
 
 .btn{
     float: right;
-    background-color: #f89c39;
-    margin-top: 5px;
-    margin-right: 20px;
+    margin-top: 18px;
+    margin-right: 120px;
     color:rgb(154, 1, 154);
     font-family:'Times New Roman', Times, serif;
+    font-size:15px;
+    color: rgb(0, 0, 0);
+    text-align: left;
     border: 0;
-   
+    background-color: rgb(245, 198, 179);
+    border: 2px solid rgb(231, 123, 34);
+    border-radius: 6px;
 }
 
-h1{
+.btn:hover {
+    background-color:rgb(248, 248, 99);
+    color:black;
+}
+
+h1 {
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+    margin-top: 12px;
+    margin-left: 100px;
+    font-size: 45px;
 }
+
 .tastohome{
     float:left;
     width: 50px;
     height: 50px;
     margin-top: 10px;
     margin-left:20px; 
-    border-radius: 30px;
-    
+    border-radius: 30px;  
 }
+
 .header li{
     list-style:none;
-    
-
 }
+
 .tastohome:hover{
     width: 55px;
     height: 55px;
     margin-left: 15px;
 }
-.destra{
-    margin-top:100px;
-    text-align: center;
-    border: solid 2px black;
-    height: 300px;
-    float: left;
-    margin-right: 40px;
+
+.sinistra {
+    float: left; 
+    text-align: justify; 
+    width: 22%;
+    height: 1600px;
+    padding-top: 130px;
+    padding-left: 30px;
+    padding-right: -70px;
 }
 
-.foto{
-    margin-top: 40px;
-    width: 200px;
-    height: 200px;
+img {
+    width:200px; 
+    height:200px; 
+    padding-bottom: 15px;
 }
 
-.sinistra{
-    margin-top:100px;
-    margin-left: 40px;
+.label {
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px; 
 }
 
+.pro {
+    border:solid 2px black;
+    width: 50%;
+    height: 30px;    
+    background-color:beige;
+}
+
+.em {
+    border:solid 2px black;
+    width: 50%;
+    height: 30px;    
+    background-color:beige;
+}
 
 /*foto ricette*/
-
-.container{
-
-        width: 100%;
-        display:grid;
-        grid-template: 1fr 1fr 1fr;
-        grid-auto-flow: column;
-        /*text-align: center;*/
-        padding: 0;
-        background-color: beige;
-        
-         
-    
+.contenitore{
+    padding-top: 110px;
+    padding-right: 5px;
+    width: 100%;
+    height: 90%; 
 }
+
 #griglia{
-    padding: 0;
-    margin-left: 20px;
-    margin-right: 20px; 
+    width: 100%;
 }
+
 #griglia > li{
-    border: 5px solid #050303;
+    border: 2px solid #050303;
     display: inline-block;
     margin: 15px;
     background-color: #f89c39 ;
-   
 }
+
 #griglia li a{
     text-decoration:none;
-    padding :0 0 0 0;
+    padding: 0 0 0 0;
     margin: 0;
     font-size: 12px;
     color: rgb(8, 6, 6);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-   
 }
 
 .imgw200{
-    width: 320px;
-    height: 200px;
+    width: 370px;
+    height: 300px;
+    border: 2px solid #f89c39;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
-.sinistra li{
-    list-style:none;
-    
-}
-.sinistra li img{
-    border: solid 20px rgb(233, 91, 91);
-
-}
-
-
-
-.pro{
-    border:solid 2px black;
-    width: 20%;
-    height: 30px;    
-    background-color:beige;
-    
-}
-.em{
-    border:solid 2px black;
-    width: 40%;
-    height: 30px;    
-    background-color:beige;
+.addImg {
+    width: 370px;
+    height: 300px;
+    border-radius: 500px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
 
+
+/* ---------- TABLET ---------- */
+
+@media screen and (max-width: 768px) {  
+    .header{
+        height:50px;
+    }
+      
+    .btn{
+        font-size: x-small;
+        margin-right: 100px;
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 25px;;
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+
+    .tastohome {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sinistra {
+        width: 100%;
+        height: 20%;
+        padding-top: 100px;
+        padding-left: 40px;
+        padding-right: -100px;
+        padding-bottom: 30px;
+    }
+
+    img {
+        width: 430px; 
+        height: 430px; 
+        padding-bottom: 15px;
+    }
+
+    .pro {
+        width: 60%;
+    }
+
+    .em {
+        width: 60%;
+    }
+
+    .imgw200{
+        width: 660px;
+        height: 500px;
+    }
+
+    .addImg {
+        width: 660px;
+        height: 500px;
+    }
+}
+
+  
+  
+/* ---------- MOBILE L ---------- */
+
+@media screen and (max-width: 425px) {  
+    .sinistra {
+        width: 100%;
+        height: 10%;
+        padding-top: 100px;
+        padding-left: 40px;
+        padding-right: -100px;
+        padding-bottom: 30px;
+    }
+
+    img {
+        width: 430px; 
+        height: 430px; 
+        padding-bottom: 15px;
+    }
+
+    .pro {
+        width: 80%;
+    }
+
+    .em {
+        width: 80%;
+    }
+
+    .imgw200{
+        width: 500px;
+        height: 450px;
+    }
+
+    .addImg {
+        width: 500px;
+        height: 450px;
+    }
+}
