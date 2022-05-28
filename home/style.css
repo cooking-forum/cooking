@@ -5,7 +5,7 @@ body{
 }
 
 .header{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Comic Sans MS', cursive;
   height:80px;
   width:100%;
   z-index:2;
@@ -20,7 +20,7 @@ body{
   margin-top: 18px;
   margin-right: 60px;
   color:rgb(154, 1, 154);
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Comic Sans MS', cursive;
   font-size:15px;
   color: rgb(0, 0, 0);
   text-align: left;
@@ -37,7 +37,7 @@ body{
 
 h1 {
   text-align: center;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Comic Sans MS', cursive;
   margin-top: 12px;
   margin-left: 120px;
   font-size: 45px;
@@ -53,7 +53,7 @@ h1 {
 }
   
 nav{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Comic Sans MS', cursive;
     height: 52px;
     width: 10%;
     position: fixed; /* il menu rimane fisso in alto*/
@@ -153,7 +153,7 @@ nav ul li a {
     border-radius: 3px;
     color: #999;
     float: left;
-    font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+    font: 16px 'Comic Sans MS', cursive;
     box-sizing: border-box;
     height: 42px;
     padding: 10px;
@@ -177,7 +177,7 @@ nav ul li a {
     cursor: pointer;
     height: 42px;
     float: right;
-    font: 15px Arial, Helvetica;
+    font: 15px 'Comic Sans MS', cursive;
     padding: 0;
     text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
     width: 15%;
@@ -217,7 +217,7 @@ nav ul li a {
     margin: 0;
     font-size: 12px;
     color: rgb(8, 6, 6);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Comic Sans MS', cursive;
 }
 
 #griglia li a:hover{
@@ -306,7 +306,7 @@ nav ul li a {
     }
         
     .modulo-ricerca #search {
-        font: 12px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+        font: 12px 'Comic Sans MS', cursive;
         height: 35px;
         padding: 8px;
         width: 70%;
@@ -314,7 +314,7 @@ nav ul li a {
         
     .modulo-ricerca #submit {
         height: 35px;
-        font: 12px Arial, Helvetica;
+        font: 12px 'Comic Sans MS', cursive;
         width: 30%;
     }
 
@@ -384,7 +384,7 @@ nav ul li a {
     }
         
     .modulo-ricerca #search {
-        font: 12px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+        font: 12px 'Comic Sans MS', cursive;
         height: 35px;
         padding: 8px;
         width: 70%;
@@ -392,7 +392,7 @@ nav ul li a {
         
     .modulo-ricerca #submit {
         height: 35px;
-        font: 12px Arial, Helvetica;
+        font: 12px 'Comic Sans MS', cursive;
         width: 30%;
     }
 

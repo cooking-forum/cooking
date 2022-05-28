@@ -5,7 +5,7 @@ body{
 }
 
 .header{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Comic Sans MS', cursive;
   height:80px;
   width:100%;
   z-index:2;
@@ -20,7 +20,7 @@ body{
   margin-top: 18px;
   margin-right: 60px;
   color:rgb(154, 1, 154);
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Comic Sans MS', cursive;
   font-size:15px;
   color: rgb(0, 0, 0);
   text-align: left;
@@ -37,7 +37,7 @@ body{
 
 h1 {
     text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Comic Sans MS', cursive;
     padding-top: 12px;
     margin-left: 120px;
     font-size: 45px;
@@ -51,7 +51,7 @@ h1 {
 }
   
 nav{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Comic Sans MS', cursive;
     height: 52px;
     width: 10%;
     position: fixed; /* il menu rimane fisso in alto*/
@@ -129,7 +129,7 @@ nav ul li a {
 h2 {
     width: 100%;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Comic Sans MS', cursive;
     font-size: 50px;
     margin-top: -5px;
     padding-right: 450px;
@@ -141,7 +141,7 @@ h2 {
     margin-top: 5px;
     margin-right: 20px;
     color:rgb(154, 1, 154);
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Comic Sans MS', cursive;
     border: 0; 
 }
 
@@ -177,7 +177,7 @@ h2 {
 h3 {
     width: 60%;
     text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Comic Sans MS', cursive;
     font-size: 30px;
     padding-top: 15px;
     padding-left: 30px;
@@ -240,7 +240,7 @@ h3 {
     background-color: rgb(245, 198, 179);
     border: 2px solid rgb(231, 123, 34);
     border-radius: 6px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Comic Sans MS', cursive;
     font-size:15px;
     color: rgb(0, 0, 0);
     text-align: left;
