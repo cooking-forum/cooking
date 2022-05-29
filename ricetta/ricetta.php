@@ -7,7 +7,35 @@
     <link rel="stylesheet" href="style.css" /> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="../bootstrap/js/bootstrap.min.js"></script> 
     <title>Forum Cucina</title>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#in").mouseenter(function(){
+                $("#in").css("background-color", "rgb(243, 151, 75)");
+                $("#in").css("border-color", "rgb(231, 123, 34)");
+                $("#in").css("color", "#000000");
+
+             });
+             $("#in").mouseleave(function(){
+                 $("#in").css("background-color", "rgb(245, 198, 179)");
+                
+             });
+
+             $(".btn").mouseenter(function(){
+                $(".btn").css("background-color", "rgb(243, 151, 75)");
+                $(".btn").css("border-color", "rgb(231, 123, 34)");
+                $(".btn").css("color", "#000000");
+
+             });
+             $(".btn").mouseleave(function(){
+                 $(".btn").css("background-color", "rgb(245, 198, 179)");
+                
+             });
+        });
+    </script>
 </head>
 <body>
     <?php
@@ -47,12 +75,40 @@
                 $r3=pg_query($incr);
             }
         }
+
+        if(isset($_POST['DeleteBtn'])){
+            ?>
+            <script type="text/javascript">
+            var ris2 = confirm ("Sicuro di voler cancellare la ricetta?");
+            if(ris2 === true)
+            {
+                location.href = '../home/home.php';
+            }
+            else
+            {
+                location.href = 'ricetta.php';
+            }
+    </script>
+            <?php
+            $email=$_SESSION["username"];
+            $nomer = $_GET['name'];
+            $que="SELECT * from ricetta where utente=$1 and nomer=$2";
+            $resu=pg_query_params($dbconn, $que, array($email,$nomer));
+
+            if($line1=pg_fetch_array($resu, null, PGSQL_ASSOC)) {
+                $eliminar= "DELETE FROM ricetta where nomer = '$nomer'";
+                $r4=pg_query($eliminar);
+                $eliminaf= "DELETE FROM fotoricette where added_by = '$nomer'";
+                $r5=pg_query($eliminaf);
+            }           
+            
+        }
     ?>
 
     <form action="" method="POST" ENCTYPE="multipart/form-data">
 
         <div class="header">
-            <a class="btn btn-primary btn-lg" href="../profilo/profilo.php" role="button">
+            <a class="btn" href="../profilo/profilo.php" role="button">
                 Profilo Utente
             </a>
             <h1> Game of Fork </h1>   
@@ -61,19 +117,16 @@
         <div class="sinistra">
             <nav> 
                 <ul>
-                    <li><a href="#"> FORUM <i class="bi bi-caret-down-fill"> </i></a>
-                        <ul>
-                        <li><a href="../chat/index.php"> Partecipa alla chat </a></li>
-                        </ul>
+                    <li><a href="../chat/index.php"> FORUM </a>                       
                     </li>
                     <li><a href="../home/home.php"> Home </a></li>
                     <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill"> </i></a>
                         <ul>
-                            <li><a href="tipo.php?name=antipasti">Antipasti </a></li>
-                            <li><a href="tipo.php?name=primi"> Primi </a></li>
-                            <li><a href="tipo.php?name=secondi"> Secondi </a></li>
-                            <li><a href="tipo.php?name=contorni"> Contorni </a></li>
-                            <li><a href="tipo.php?name=dolci"> Dolci </a></li>
+                            <li><a href="../home/tipo.php?name=antipasti">Antipasti </a></li>
+                            <li><a href="../home/tipo.php?name=primi"> Primi </a></li>
+                            <li><a href="../home/tipo.php?name=secondi"> Secondi </a></li>
+                            <li><a href="../home/tipo.php?name=contorni"> Contorni </a></li>
+                            <li><a href="../home/tipo.php?name=dolci"> Dolci </a></li>
                         </ul>
                     <li><a href="#"> Chi Siamo </a></li>
                     <li><a href="../ricette/form-ricette.html"> Crea Ricetta </a></li>
@@ -82,12 +135,12 @@
         </div>
 
         <div class="destra">
-            <h2> NOMEEEEE
+            <h2>
                 <?php
                     $nomer = $_GET['name'];
                     echo "$nomer";
                 ?>    
-            </h2>  
+             </h2>
                 <?php
                     $uploaded=false;
                     $save_path='';
@@ -97,7 +150,7 @@
                     $line2=pg_fetch_array($result, null, PGSQL_ASSOC);
                             
                     $id = $line2['id'];
-                    $save_path = "images/".$nomer.".jpg";
+                    $save_path = "images/".$id.".jpg";
                             
                                 
                     $q3=  'SELECT * from get_image($1)';
@@ -114,13 +167,10 @@
                     }  
                 ?>
                         
-            <div>
+            <div class="fb">
                 <img  class="cibo" src="<?php echo $save_path; ?>">
-            </div>
-           
-           
-            <br>
-            <?php 
+                <br>
+                <?php 
                 $email=$_SESSION["username"];
                 $nomer = $_GET['name'];
                 $q="SELECT * from likes where utente=$1 and ricetta=$2 ";
@@ -131,9 +181,14 @@
                 else{
                     echo  "<button  class='button' id='but' name='likeButton' > <i class='bi bi-chat-left-heart'></i> Lascia un mi piace se ti è piaciuta la ricetta </button>";
                 }
+                
+
             ?>
 
-            <br>
+            </div>
+           
+           
+           
             <div class="littleBox">
                 <h3> Autore </h3>
                 <div class="box">
@@ -143,7 +198,16 @@
                         $line=pg_fetch_array($result1, null, PGSQL_ASSOC);
                         $utente = $line['utente'];
                         echo "<li>"."<a href='../profilo/profiloPub.php?name=$utente'>".$utente."</a>"."</li>";
+
+
                     ?>
+                </div>
+                <div>
+                <?php 
+                if($utente==$email){
+                            echo "<button class='bot' name='DeleteBtn'> Elimina Ricetta</button>";
+                         }
+                ?>
                 </div>
                 
                 <h3> Tempo di preparazione </h3>
@@ -153,18 +217,23 @@
                         echo "$tempoP" ;
                     ?>
                 </div>
-            </div>
 
-
-            <h3> Ingredienti </h3>
+                <h3> Ingredienti </h3>
             <div class="box">
                 <?php
                     $ingredienti = $line['ingredienti'];
                     echo "$ingredienti" ;
                 ?>
             </div>
+            </div>
+
+
+
+            
+
+            
            
-            <br> <br>
+            <br>
             <h3> Descrizione </h3>
             <div class="des">   
                 <?php
@@ -173,8 +242,12 @@
                 ?> 
             </div>
 
+            
+
+           
+
             <div class="comm" >
-                <h3> COMMENTI </h3>
+                <h3> Commenti </h3>
                 <form action="" method="post" name="myForm" onSubmit="return func()" hidden>
                     <div class="sc">
                         <div class="con">
@@ -187,21 +260,26 @@
                                     if($trovati>0){
                                         while($row=pg_fetch_assoc($result)){
                                             echo "<div class='utente' style='float:left; margin-left:30px;'>" . $row['utente']."  :  ". $row['commento']."</div>";
-                                            echo '<br>';
+                                            
                                             echo '<br>';
                                         }
                                     }
-                                    else { echo "Nessuno ha commentato la ricetta"; }                  
+                                    else { echo "<div class='nessuno'> Nessuno ha commentato la ricetta </div>"; }                  
                                 ?>
                             </div>
                         </div>
                         <br>
                         <input class="areatesto " type="text" name="inputText"style="float: center; " placeholder="Inizia una conversazione" />
-                        <input class="bottone" type="submit" name="invia" value="Invia"  class="bi bi-send-fill"   /> 
+                        <input class="bottone" id="in" type="submit" name="invia" value="Invia"  class="bi bi-send-fill"   /> 
                     </div>
                 </form>
-            </div>  
+            </div> 
+
         </div>
+
+        
     </form>
+
+   
 </body>
 </html>
