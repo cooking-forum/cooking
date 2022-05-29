@@ -74,7 +74,7 @@
             <li><a href="../home/tipo.php?name=contorni"> Contorni </a></li>
             <li><a href="../home/tipo.php?name=dolci"> Dolci </a></li>
           </ul>
-        <li><a href="#"> Chi Siamo </a></li>
+        <li><a href="../chisiamo/index.html"> Chi Siamo </a></li>
         <li><a href="../ricette/form-ricette.html"> Crea Ricetta </a></li>
       </ul>
     </nav>
