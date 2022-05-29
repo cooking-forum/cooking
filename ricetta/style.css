@@ -291,6 +291,10 @@ h3 {
     background-color: rgb(245, 198, 179);
     border: 2px solid rgb(231, 123, 34);
 }
+.bot:hover{
+    background-color: rgb(243, 151, 75);
+
+}
 
 
 
