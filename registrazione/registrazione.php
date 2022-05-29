@@ -18,8 +18,21 @@
                 $result=pg_query_params($dbconn, $q1, array($email));
 
                 if($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                    echo "<h1> Spiacente, l'email indicata risulta già essere associata ad un account.</h1>
-                        <a href = ../login/login.html> Clicca qui per il login </a>";
+                    ?>
+
+                    <script type="text/javascript">
+                    var ris2 = confirm ("Spiacente, l'email indicata risulta già essere associata ad un account.");
+                    if(ris2 === true)
+                    {
+                        location.href = '../login/login.php';
+                    }
+                    else
+                    {
+                        location.href = 'index.html';
+                    }
+                </script>
+
+                <?php
                 }
                 else {
                     $nome = $_POST["inputName"] ;
@@ -54,8 +67,23 @@
                     $q2 = 'INSERT into utente values ($1,$2,$3,$4)' ;
                     $data = pg_query_params($dbconn, $q2, array($email,$nome,$pawd,$livello) ) ;
                     if($data){
-                        echo "<h1> Registrazione completata<br/></h1>";
-                        header("Location: ../home/home.php");
+                        ?>
+                
+                        <script type="text/javascript">
+                            var ris2 = confirm ("Ti stai per registrare! Confermi di voler proseguire?");
+                            if(ris2 === true)
+                            {
+                                location.href = '../home/home.php';
+                            }
+                            else
+                            {
+                                location.href = 'index.html';
+                            }
+                        </script>
+        
+        
+        
+                        <?php
                         
                     }
                 }

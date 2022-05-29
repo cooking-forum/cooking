@@ -15,11 +15,13 @@
     </div>
 
     <div class="centralBox">
+       
+            
         <form action="registrazione.php" class="form-signin" method="POST" name="myForm" onSubmit="return validaForm()" ENCTYPE="multipart/form-data">
             <h2> REGISTRAZIONE </h2>
-            <h3> Unisciti alla nostra community! </h3>
-            <h3> Basteranno pochi e semplici passaggi...compila il form che trovi di seguito! </h3>
-    
+            <h3> Unisciti alla nostra community! <br><br>
+             Basteranno pochi e semplici passaggi... compila il form che trovi di seguito! </h3>
+            <br>
             <label class="label"> Nome utente </label>
             <input type="text" name="inputName" class="form-control" placeholder="Nome utente" required />
             <br>
@@ -34,13 +36,12 @@
             </div> 
             <br>
             <label class="label"> Immagine profilo: </label>
-            <input type="file" name="inputImage"  placeholder="Immagine profilo" required/>
-        
+            <input type="file" class="control" name="inputImage"  placeholder="Immagine profilo" required/>
             <br>
-            <br>
+
     
             <label class="label"> Gestione dei cookies </label>
-            <select class="tipologia" name="cookies" required>
+            <select class="form-control" name="cookies" required>
                 <option></option>
                 <option value="Accetto solo i cookies necessari">Accetto solo i cookies necessari</option>
             </select>
@@ -48,9 +49,12 @@
 
             <button class="rst" name="signupButton" buttontype="submit"> Invia </button>
             <input class="rst" type="reset" value="Reset">
+
+            
+
         </form>
     </div>
-</div>
+  
 
 </body>
 </html>
