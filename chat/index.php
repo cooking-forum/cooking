@@ -6,12 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="chat.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="../bootstrap/js/bootstrap.min.js"></script> 
+    <title>Forum Cucina</title>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".bottone").mouseenter(function(){
+                $(".bottone").css("background-color", "rgb(243, 151, 75)");
+             });
+             $(".bottone").mouseleave(function(){
+                 $(".bottone").css("background-color", "rgb(245, 198, 179)");
+             });
+             $(".btn").mouseenter(function(){
+              $(".btn").css("background-color", "rgb(243, 151, 75)");
+                $(".btn").css("border-color", "rgb(231, 123, 34)");
+                $(".btn").css("color", "#000000");
+
+             });
+             $(".btn").mouseleave(function(){
+                 $(".btn").css("background-color", "rgb(245, 198, 179)");
+             });
+             
+             
+        });
+    </script>
 </head>
 <body>
-  <!--
+  <?php
     $dbconn = pg_connect("host=localhost dbname=forum port=5432 user=postgres password=Stella")
     or die( 'Could not connect: ' . pg_last_error());
     $testo='';
@@ -26,10 +50,10 @@
       $q2 = "INSERT INTO chat values($1,$2)";
       $data = pg_query_params($dbconn, $q2, array($email,$testo) ) ;
     }
-  -->
+  ?>
 
   <div class="header">
-    <a class="btn btn-primary btn-lg" href="../profilo/profilo.php" role="button">
+    <a class="btn " href="../profilo/profilo.php" role="button">
       Profilo Utente
     </a>
     <h1> Game of Fork </h1>   
@@ -38,11 +62,8 @@
   <div class="sinistra">
     <nav> 
       <ul>
-        <li><a href="#"> FORUM <i class="bi bi-caret-down-fill"> </i></a>
-          <ul>
-              
-              <li><a href="../chat/index.php"> Partecipa alla chat </a></li>
-          </ul>
+        <li><a href="../chat/index.php"> FORUM </a>
+          
         </li>
         <li><a href="../home/home.php"> Home </a></li>
         <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill"> </i></a>
@@ -63,7 +84,7 @@
     <form action="" method="post" name="myForm" onSubmit="return validaForm()">
       <div class="sc">
         BENVENUTO O BENTORNATO NEL FORUM
-          <div class="container">
+          <div class="contenitore">
             <div class="tabella2">
             <?php
               $db = pg_connect("host=localhost dbname=forum port=5432 user=postgres password=Stella")
@@ -78,7 +99,7 @@
                 }
                 else {
                   $utente=$row['utente'];
-                  //echo "<tr>";
+                  
                   echo "<div class='utente' >" ."<div class='nome'>". "<a href='../profilo/profiloPub.php?name=$utente'>".$utente."</a>"."</div>"."<div class='mess2'>". $row['testo']."</div>". "</div>";
                   echo "<br>";
                 }
@@ -87,9 +108,8 @@
             </div>
           </div>
           <br>
-          <br>
 
-          <input class="areatesto " type="text" name="inputText"style="float: center; " placeholder="Inizia una conversazione" />
+          <input class="areatesto " type="text" name="inputText"  placeholder="Inizia una conversazione" />
           <input  class="bottone" type="submit" name="invia" value="Invia"  class="bi bi-send-fill" /> 
 
           <br>
