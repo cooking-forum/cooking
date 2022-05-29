@@ -16,9 +16,16 @@
         else {
             $nomer = $_POST["nomeRicetta"];
             $q1 = 'SELECT * from ricetta where nomer=$1';
+
             $result = pg_query_params($dbconn, $q1, array($nomer));
             if ($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                echo "<h1> Una ricetta con lo stesso nome è già stata inserita! Prova a aggiungere un commento sotto al post <h1>";
+                ?>
+                    <script type="text/javascript">
+                        window.alert("Una ricetta con lo stesso nome è già stata inserita! Prova a aggiungere un commento sotto alla ricetta");
+                        location.href = '<?php echo  " ../ricetta/ricetta.php?name=$nomer" ;?>';
+                    </script>  
+                    <?php
+                    
             }
             else {
                 
@@ -61,8 +68,21 @@
 
                 if ($data2) {
 
-                    echo "<h1> Ricetta inserita con successo <br/></h1>";
-                        header("Location: ../home/home.php");
+                    ?>
+
+                    <script type="text/javascript">
+                            var ris2 = confirm ("Ricetta inserita con successo! Confermi di voler proseguire?");
+                            if(ris2 === true)
+                            {
+                                location.href = '../home/home.php';
+                            }
+                            else
+                            {
+                                location.href = 'form-ricette.html';
+                            }
+                    </script>
+
+                    <?php
                 }
                 
                 

@@ -20,36 +20,34 @@ h1 {
     text-align: center;
     font-family: 'Comic Sans MS', cursive;
     padding-top: 12px;
-    margin-left: 120px;
-    font-size: 45px;
-}
+    font-size: 40px;
+    margin-right: 70px;
+  }
 
 .centralBox {
-    width: 80%;
+    width: 70%;
     height: 55%;
     padding-top: 70px;
-    margin-left: 240px;
+    margin-left:240px;
+   
   }
 
-  h2 {
+h2 {
     width: 100%;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 45px;
+    font-family: 'Comic Sans MS', cursive;;
+    font-size: 25px;
     margin-top: 5px;
-    padding-left: 120px;
-    margin-bottom: 25px;
-  }
+}
   
-  h3 {
+h3 {
     width: 100%;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 45px;
-    margin-top: 5px;
-    padding-left: 120px;
-    margin-bottom: 25px;
-  }
+    font-family: 'Comic Sans MS', cursive;;
+    font-size: 18px;
+    margin-top: 15px;
+    
+}
 
 .tastohome{
     float:left;
@@ -67,7 +65,7 @@ h1 {
 }
 
 .form-ricetta {
-    width: 100%;
+    width: 95%;
     padding: 15px;
     margin: 5px;
     height: 100%;
@@ -79,16 +77,17 @@ h1 {
 
 .label {
     text-align: left;
-    width: 20%;
-    margin-top: 20px;
+    width: 30%;
+    margin-top: 10px;
     display: inline-block;
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 35px;
-    padding: 12px 12px 12px 0;
-}
+    font-family: 'Comic Sans MS', cursive;;
+    font-size: 20px;
+    padding-left: 40px;
+  }
+  
 
 .form-input {
-    width: 30%;
+    width: 32%;
     padding: 12px 10px;
     margin-left: 10px;
     margin-top: 20px;
@@ -98,9 +97,9 @@ h1 {
 }
 
 .form-textarea {
-    width: 60%;
+    width: 70%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin-left: 40px;
     margin-top: 6px;
     display: inline-block;
     border: 3px solid rgb(255, 187, 187);
@@ -109,34 +108,24 @@ h1 {
 }
 
 .btn {
+    width: auto;
+    margin-top: 40px;
+    margin-right: -170px;
+    margin-left: 35%;
     background-color: rgb(245, 198, 179);
     border: 2px solid rgb(231, 123, 34);
     border-radius: 12px;
     color: rgb(0, 0, 0);
-    text-align: left;
+    text-align: center;
     display: inline-block;
-    font-size: 30px;
-    margin-top: 10px;
+    font-size: 20px;
+    padding:5px 10px;
 }
 
 .btn:hover {
     background-color: rgb(243, 151, 75);
 }
 
-.btn-ingr {
-    background-color: rgb(245, 198, 179);
-    border: 2px solid rgb(231, 123, 34);
-    border-radius: 12px;
-    color: rgb(0, 0, 0);
-    text-align: left;
-    display: inline-block;
-    font-size: 20px;
-    margin-top: 7px;
-}
-
-.btn-ingr:hover {
-    background-color: rgb(243, 151, 75);
-}
 
 
 .tipologia {
@@ -154,7 +143,8 @@ h1 {
 
 .carica {
     width: 280px;
-    height: 140px;
+    height: 80px;
+    margin-left: 40px;
 }
 
 
@@ -168,26 +158,39 @@ h1 {
     }
     
     h1 {
-        font-size: 25px;;
-        margin-top: -30px;
-        margin-left: 30px;
+        font-size: 30px;
+        padding-top: 7px;
+        margin-left: 50px;
+    }
+
+    .tastohome {
+        margin-left:15px; 
+        margin-top: 5px;
+        width: 35px;
+        height: 35px;
+    }
+    .tastohome:hover{
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
     }
 
     .centralBox {
-        width: 95%;
-        height: 40%;
-        margin-top: 50px;
-        margin-left: 40px;
+        width: 90%;
+        height: auto;
+        padding-top: 70px;
+        margin-left: 50px;
     }
       
     h2 {
-        font-size: 30px;
-        margin-top: 15px;
-        padding-left: 10px;
+        font-size: 25px;
+        margin-top: 15px; 
+        
     }
       
     h3 {
         font-size: 20px;
+        
     }
 
     .form-ricetta {
@@ -195,37 +198,51 @@ h1 {
     }
     
     .label {
-        text-align: center;
+        text-align: left;
         width: 80%;
-        margin-top: 20px;
+        margin-top: 15px;
         display: inline-block;
         font-family: 'Comic Sans MS', cursive;
-        font-size: 35px;
-        padding: 12px 12px 12px 0;
+        font-size: 18px;
+        padding-left: 20px;
     }
 
     .form-input {
-        width: 80%;
+        width: 60%;
+        height:40px;
+        margin-top:10px;
+        margin-left: 20px;
+        
     }
 
     .form-textarea {
-        width: 95%;
+        width: 92%;
+        margin-left: 20px;
     }
 
     .btn {
         width: 100px;
+        margin-top: 40px;
         margin-right: -60px;
         margin-left: 150px;
         font-size: 25px;
     }
 
     .tipologia {
-        width: 40%;
+        width: 30%;
+        height: 40px;
+        padding:0px 10px ;
+        margin-top: 10px;
+        padding-left: 20px;
+        
+       
     }
 
     .carica {
         width: 320px;
-        height: 200px;
+        height: 80px;
+        margin-left: 0px;
+        padding-left: 20px;
     }       
 }
 
@@ -233,60 +250,80 @@ h1 {
 
 
 /* ---------- MOBILE L ----------*/
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
+    
+    
     h1 {
-        font-size: 25px;;
-        margin-top: -30px;
-        margin-left: 30px;
+        font-size: 25px;
+        padding-top: 10px;
+        margin-right:10px;
+        
+      }
+    
+      .centralBox {
+        padding-top: 70px;
+        margin-left: 35px;
+        width: 90%;
       }
 
-    .centralBox {
-        width: 100%;
-        height: 70%;
-        padding-top: 80px;
-        margin-left: 55px;
-    }
+   
+  h2 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
 
-    h2 {
-        font-size: 30px;
-        margin-top: 15px;
-    }
-
-    h3 {
-        font-size: 20px;
-        padding-left: 10px;
-    }
+  h3 {
+    font-size: 15px;
+    padding-left: 10px;
+    margin-bottom:5px;
+    margin-top:8px;
+  }
 
     .form-ricetta {
-        width: 80%;
+        width: 90%;
+        padding: 0px 0px 0px 0px;
     }
     
     .label {
         width: 100%;
-        font-size: 20px;
-        padding-left: 10px;
+        font-size: 15px;
         text-align: center;
+        margin-top: 10px;
     }
 
     .form-input {
-        width: 80%;
+        width: 88%;
+        height: 35px;
+        padding: 12px 20px;
     }
 
     .form-textarea {
-        width: 95%;
+        width: 88%;
+        height: 100px;
+        margin-top:5px;
     }
 
     .btn {
-        margin-right: -20px;
-        margin-left: 50px;
+        margin-right: -15px;
+        margin-left: 65px;
+        font-size:15px;
+        width: 75px;
+        margin-top: 10px;
+        
+        
     }
 
     .tipologia {
-        width: 75%;
+        width: 40%;
+        height: 30px;
+       margin-left:20px;
+        
+
     }
 
     .carica {
         width: 320px;
-        height: 200px;
+        height: 80px;
+        font-size: small;
     }       
 }

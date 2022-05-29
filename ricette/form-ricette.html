@@ -13,16 +13,16 @@
 </head>
 <body>
     <div class="header">
-        <li><a href="../home/home.php"> <img class="tastohome" src="../immagini/tastohome.jpg"></a></li>
-        <h1 class="h1"> Game of Fork </h1>   
+        <li style="list-style: none;"><a href="../home/home.php"> <img class="tastohome"  src="../immagini/tastohome.jpg"></a></li>
+        <h1 > Game of Fork </h1>   
     </div>
     <br>
     <div class="centralBox"> 
         <form action="form-ricette.php" method="POST" class="form-ricetta" name="myRicetta" onsubmit="checkRicetta();" ENCTYPE="multipart/form-data">
-            <h2 class="h2"> Aggiungi una tua ricetta! </h2> <br>
-            <h3 class="h3"> Con pochi e semplici passaggi puoi contribuire anche tu a migliorare il nostro forum! </h3> <br>
+            <h2 > Aggiungi una tua ricetta! </h2> <br>
+            <h3 > Con pochi e semplici passaggi puoi contribuire anche tu a migliorare il nostro forum! </h3> <br>
             
-            <label for="nome-ricetta" class="label"> nome ricetta </label>
+            <label for="nome-ricetta" class="label"> Nome ricetta </label>
             <input type="text" name="nomeRicetta" class="form-input" required autofocus />
             <select class='tipologia' id='tip' name='tipo' placeholder='Tipologia' required>
                 <option></option>
@@ -32,17 +32,16 @@
                 <option value='contorni'>contorni</option>
                 <option value='dolci'>dolci</option>
             </select>
-            <br> <br>
-            
+            <br> 
             <label for="tempo di preparazione" class="label"> Tempo di preparazione </label>
             <input type="text" name="tempoP" class="form-input" required />
             
-            <br> <br>
+            <br> 
             <label for="ingredienti" class="label"> Ingredienti </label> <br>
             <textarea class="form-textarea" id="ingredienti" name="ingredienti" rows="20" cols="20" placeholder="Inserire gli ingredienti della ricetta" required > </textarea> 
 
             
-            <br> <br>
+            <br> 
             <label for="procedimento" class="label"> Procedimento </label> <br>
             <textarea class="form-textarea" id="procedimento" name="procedimento" rows="20" cols="100" placeholder="Inserire il procedimento della ricetta" required> </textarea> 
             <br> <br>
@@ -51,6 +50,8 @@
             <br>
             <button class="btn" type="submit" name="submitButton" id="binv"> Invia </button> 
             <button class="btn" type="reset" name="resetButton" id="bres"> Reset </button>
+            <br>
+            <br>
         </form>
     </div>
 </body>
