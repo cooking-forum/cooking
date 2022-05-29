@@ -30,10 +30,7 @@ body{
     border-radius: 6px;
 }
 
-.btn:hover {
-    background-color:rgb(248, 248, 99);
-    color:black;
-}
+
 
 h1 {
     text-align: center;
@@ -45,11 +42,12 @@ h1 {
 
 .tastohome{
     float:left;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 60px;
     margin-top: 10px;
     margin-left:20px; 
-    border-radius: 30px;  
+    border-radius: 40%;
+      
 }
 
 .header li{
@@ -58,18 +56,19 @@ h1 {
 
 .tastohome:hover{
     width: 55px;
-    height: 55px;
+    height: 70px;
     margin-left: 15px;
 }
 
 .sinistra {
     float: left; 
     text-align: justify; 
-    width: 22%;
-    height: 1600px;
+    width: 20%;
+    height: auto;
     padding-top: 130px;
     padding-left: 30px;
     padding-right: -70px;
+    margin-right:30px;
 }
 
 img {
@@ -90,14 +89,14 @@ img {
 
 .pro {
     border:solid 2px black;
-    width: 50%;
+    width: auto;
     height: 30px;    
     background-color:beige;
 }
 
 .em {
     border:solid 2px black;
-    width: 50%;
+    width: auto;
     height: 30px;    
     background-color:beige;
 }
@@ -107,7 +106,7 @@ img {
     padding-top: 110px;
     padding-right: 5px;
     width: 100%;
-    height: 90%; 
+    height: auto; 
 }
 
 #griglia{
@@ -129,21 +128,32 @@ img {
     color: rgb(8, 6, 6);
     font-family: 'Comic Sans MS', cursive;
 }
-
-.imgw200{
-    width: 370px;
-    height: 300px;
-    border: 2px solid #f89c39;
-    margin-top: 10px;
-    margin-bottom: 25px;
+#griglia li a:hover{
+    color:red;
 }
 
-.addImg {
-    width: 370px;
-    height: 300px;
-    border-radius: 500px;
+
+.imgw200{
+    width: 350px;
+    height: 230px;
+   
     margin-top: 10px;
     margin-bottom: 25px;
+    transition: .5s !important;
+}
+
+.imgw200:hover {
+    -webkit-transform: scale(1.1) !important;
+    transform: scale(1.1) !important;
+  }
+.addImg {
+    width: 230px;
+    height: 230px;
+    margin-top: 40px;
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-bottom:20px;
+   
 }
 
 
@@ -157,24 +167,34 @@ img {
       
     .btn{
         font-size: x-small;
-        margin-right: 100px;
+        margin-right: 70px;
         margin-top: 10px;
     }
 
+    .label{
+        font-size: 15px;
+    }
+
     h1 {
-        font-size: 25px;;
+        font-size: 25px;
         margin-top: 10px;
         margin-left: 50px;
     }
 
     .tastohome {
+        margin-left:15px; 
+        margin-top: 5px;
+        width: 35px;
+        height: 50px;
+    }
+    .tastohome:hover{
         width: 40px;
-        height: 40px;
+        height: 55px;
+        margin-left: 10px;
     }
 
     .sinistra {
         width: 100%;
-        height: 20%;
         padding-top: 100px;
         padding-left: 40px;
         padding-right: -100px;
@@ -182,8 +202,8 @@ img {
     }
 
     img {
-        width: 430px; 
-        height: 430px; 
+        width: 270px; 
+        height: 270px; 
         padding-bottom: 15px;
     }
 
@@ -195,14 +215,25 @@ img {
         width: 60%;
     }
 
-    .imgw200{
-        width: 660px;
-        height: 500px;
+    #griglia > li{ 
+        margin-left: -5px;
+       
+       
     }
 
+    .imgw200{
+        width: 320px;
+        height: 200px;
+    }
+    .imgw200:hover {
+        -webkit-transform: none !important;
+        transform: none;
+      }
+    
+
     .addImg {
-        width: 660px;
-        height: 500px;
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -210,7 +241,21 @@ img {
   
 /* ---------- MOBILE L ---------- */
 
-@media screen and (max-width: 425px) {  
+@media screen and (max-width: 500px) { 
+    
+    .header{
+        height:50px;
+    }
+    .btn{
+        font-size: x-small;
+        margin-right: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 50px;
+    }
     .sinistra {
         width: 100%;
         height: 10%;
@@ -219,10 +264,11 @@ img {
         padding-right: -100px;
         padding-bottom: 30px;
     }
+    
 
     img {
-        width: 430px; 
-        height: 430px; 
+        width: 330px; 
+        height: 330px; 
         padding-bottom: 15px;
     }
 
@@ -235,12 +281,14 @@ img {
     }
 
     .imgw200{
-        width: 500px;
-        height: 450px;
+        width: 340px;
+        height: 210px;
+
+        
     }
 
     .addImg {
-        width: 500px;
-        height: 450px;
+        width: 210px;
+        height: 210px;
     }
 }

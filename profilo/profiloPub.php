@@ -5,7 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
     <link rel="stylesheet" href="style.css" /> 
-    <title>Forum Cucina</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".btn").mouseenter(function(){
+                $(".btn").css("background-color", "rgb(243, 151, 75)");
+                $(".btn").css("border-color", "rgb(231, 123, 34)");
+                $(".btn").css("color", "#000000");
+
+             });
+             $(".btn").mouseleave(function(){
+                 $(".btn").css("background-color", "rgb(245, 198, 179)");
+                
+             });
+        });
+    </script>
     </head>
     <body>
         <form action="" method="POST" ENCTYPE="multipart/form-data">
@@ -30,7 +43,7 @@
         
 
         <div >
-            <div class="sinistra" style="float: left; text-align: justify; width:50%;">
+            <div class="sinistra" >
                 
                 <?php
                 $save_path = 'images/images_2.jpg'; 
@@ -52,8 +65,6 @@
                     $res = pg_query_params($dbconn, $q2, array($id));
 
                 
-                    
-
                     if($res){
 
                         $img = pg_fetch_object($res);
@@ -72,66 +83,52 @@
                 
                 
                 <div>
-                <img  style='width:200px; height:200px;' src="<?php 
-                echo $save_path;
-                ?>">
-            </div>
-            
-                <br> 
-                Nome Utente:
-                <div class="pro">
-                    
-                    <?php
-                        $nome=$line['nome'];
-                        echo "$nome";
-                    ?>
-                    <br>
-                </div>
-                <br>
-                Email:
-                <div class="em">
-                    <?php
-                        
-                        echo "$email";
-                    ?>
-                </div>
-                <br>
-                <br>
-                <br>            
-            </div>
-            <br>
-            <br>
-            <div class="destra" style="float: right; text-align: justify; width: 40%;">
-            Livello: 
-                <?php
-                    $email=$_GET['name'];
-                     $q4=pg_query("SELECT SUM(likes) as l from ricetta where utente='$email'");
-                     $row=pg_fetch_assoc($q4);
-                     $sum=$row['l'];
-                     if($sum>5){
-                         echo 'Medio';
-                     }else if($sum>10){
-                         echo 'Esperto';
-                     }else{
-                         echo 'Principiante';
-                     }
-                ?>
-                <br>
-                Numero Ricette: 
+            <img  class="cibo" src="<?php echo $save_path; ?>">
+        </div>
+        
+        <label class="label"> Nome Utente </label>
+        <div class="pro">
+            <?php
+                $nome=$line['nome'];
+                echo "$nome";
+            ?>
+        </div>
+        <br>
 
-                <?php
-                 $email=$_GET['name'];
+        <label class="label"> Email </label>
+        <div class="em">
+            <?php
+                echo "$email";
+            ?>
+        </div> 
+        <br>           
+        
+        <label class="label"> Livello: 
+        
+            <?php
+                $email=$_SESSION['username'];
+                $q4=pg_query("SELECT SUM(likes) as l from ricetta where utente='$email'");
+                $row=pg_fetch_assoc($q4);
+                $sum=$row['l'];
+                if ($sum>5) { echo 'Medio'; }
+                else if ($sum>10) { echo 'Esperto'; }
+                else { echo 'Principiante'; }
+            ?>
+        </label> 
+        <br>
+        <label class="label"> Numero Ricette: 
+        
+            <?php
+                $email=$_SESSION['username'];
                 $q5="SELECT * from ricetta where utente='$email'";
                 $res=pg_query($q5);
                 $count=pg_num_rows($res);
                 echo $count;
+            ?>
+        </label>
+    </div>
 
-                ?>
-            </div>
-        </div>
-    
-
-        <div class="container" >
+        <div class="contenitore" >
             <ul id="griglia">
 
 

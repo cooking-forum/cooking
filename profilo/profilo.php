@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
     <link rel="stylesheet" href="style.css" /> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="../bootstrap/js/bootstrap.min.js"></script> 
     <title>Forum Cucina</title>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".btn").mouseenter(function(){
+                $(".btn").css("background-color", "rgb(243, 151, 75)");
+                $(".btn").css("border-color", "rgb(231, 123, 34)");
+                $(".btn").css("color", "#000000");
+
+             });
+             $(".btn").mouseleave(function(){
+                 $(".btn").css("background-color", "rgb(245, 198, 179)");
+                
+             });
+        });
+    </script>
 </head>
 <body>
     <form action="" method="POST" ENCTYPE="multipart/form-data">
@@ -88,7 +105,8 @@
         </div> 
         <br>           
         
-        <label class="label"> Livello: </label> 
+        <label class="label"> Livello: 
+        
             <?php
                 $email=$_SESSION['username'];
                 $q4=pg_query("SELECT SUM(likes) as l from ricetta where utente='$email'");
@@ -98,8 +116,10 @@
                 else if ($sum>10) { echo 'Esperto'; }
                 else { echo 'Principiante'; }
             ?>
+        </label> 
         <br>
-        <label class="label"> Numero Ricette: </label>
+        <label class="label"> Numero Ricette: 
+        
             <?php
                 $email=$_SESSION['username'];
                 $q5="SELECT * from ricetta where utente='$email'";
@@ -107,6 +127,7 @@
                 $count=pg_num_rows($res);
                 echo $count;
             ?>
+        </label>
     </div>
     
 
@@ -146,6 +167,8 @@
                     echo "</li>";
                 }
             ?>
+
+<li> <a href="../ricette/form-ricette.html"> <img class="addImg" src="../immagini/plusar.png"> <br>Crea la tua ricetta</a> </li>
         </ul>
     </div>
 </body>
