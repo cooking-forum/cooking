@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" /> 
     <link rel="stylesheet" href="style.css" /> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="../bootstrap/js/bootstrap.min.js"></script> 
     <title>Forum Cucina</title>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#b").mouseenter(function(){
+                $("#b").css("background-color", "rgb(243, 151, 75)");
+             });
+             $("#b").mouseleave(function(){
+                 $("#b").css("background-color", "rgb(245, 198, 179)");
+             });
+             
+        });
+    </script>
 </head>
 <body >
     
@@ -15,23 +29,19 @@
   
     <div class="header">
         
-        <a class="btn btn-primary btn-lg" name="profiloBtn" href="../profilo/profilo.php" role="button">
+        <a class="btn " id="b" name="profiloBtn" href="../profilo/profilo.php" role="button">
             Profilo Utente
         </a>
         <h1> Game of Fork </h1>   
     </div>
    
 
-    <div class="sinistra" style="float: left; text-align: justify; width:20%;">
+    <div class="sinistra" >
         <nav> 
             <ul>
-                <li><a href="#"> FORUM <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
-                    <ul>
-                    <li><a href="../chat/index.php"> Partecipa alla chat </a></li>
-                    </ul>
-                </li>
+                <li><a href="../chat/index.php"> FORUM </a></li>
                 <li><a href="../home/home.php"> Home </a></li>
-                <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill" style="float:right"> </i></a>
+                <li><a href="#"> Cosa vuoi cucinare? <i class="bi bi-caret-down-fill" > </i></a>
                     <ul>
                         <li><a href="tipo.php?name=antipasti">Antipasti </a></li>
                         <li><a href="tipo.php?name=primi"> Primi </a></li>
@@ -48,13 +58,13 @@
     </div>
 
 
-    <div class="ok" style="float: right; text-align: justify; width: 60%; margin-top: 100px;">
-        <form class="modulo-ricerca" action="" method="post" style="margin-left:10px;">
+    <div class="ok" >
+        <form class="modulo-ricerca" action="" method="post" >
             <input id="search" type="text" name="inputTesto" placeholder="Cerca una ricetta..." required>
             <input id="submit" type="submit" name="researchButton" value="CERCA">
     </form>
    <!-- <form action="" method="POST" ENCTYPE="multipart/form-data"> -->
-    <div id="container" >
+    <div id="contenitore" >
        <ul id="griglia">
 
 
@@ -73,7 +83,7 @@
                     if(isset($_POST['researchButton'])){
                         $testo=$_POST['inputTesto'];
                         
-                        $result = pg_query($dbconn, "SELECT * FROM ricetta where (nomer SIMILAR TO '%($testo)%') OR  (ingredienti SIMILAR TO '%($testo)%')");
+                        $result = pg_query($dbconn, "SELECT * FROM ricetta where where (LOWER(nomer) SIMILAR TO LOWER('%($testo)%')) OR  (LOWER(ingredienti) SIMILAR TO LOWER('%($testo)%') )");
                         $trovati=pg_num_rows($result);
                         if($trovati>0){
 

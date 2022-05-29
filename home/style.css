@@ -30,10 +30,7 @@ body{
   border-radius: 6px;
 }
 
-.btn:hover {
-  background-color:rgb(248, 248, 99);
-  color:black;
-}
+
 
 h1 {
   text-align: center;
@@ -55,7 +52,7 @@ h1 {
 nav{
     font-family: 'Comic Sans MS', cursive;
     height: 52px;
-    width: 10%;
+    width: 13%;
     position: fixed; /* il menu rimane fisso in alto*/
     left: 30px;
 }
@@ -126,7 +123,7 @@ nav ul li a {
     width: 85%;
     height: 20%; 
     margin-top: -40px;
-    margin-right: 60px;
+    margin-right: 0;
     margin-left: 30px;
 }
 
@@ -180,18 +177,14 @@ nav ul li a {
     font: 15px 'Comic Sans MS', cursive;
     padding: 0;
     text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
-    width: 15%;
+    width: 20%;
 }
   
-.modulo-ricerca #submit:hover,
-.modulo-ricerca #submit:focus,
-.modulo-ricerca #submit:active {
-    background-color: #00B359;
-}
 
-#container{
+#contenitore{
     display: grid;
     grid-auto-flow: column;
+    grid-template:1fr 1fr 1fr;
     padding: 0;
     margin: 0 auto;
     margin-right: 15px;
@@ -225,8 +218,8 @@ nav ul li a {
 }
 
 .imgw200{
-    width: 620px;
-    height: 400px;
+    width: 380px;
+    height: 230px;
     border: 2px solid #f89c39;
     transition: .5s !important;
     margin-top: 10px;
@@ -260,7 +253,7 @@ nav ul li a {
 
     .sinistra {
         width:15%;
-        margin-top: 70px;
+        margin-top: 50px;
     }
       
     nav{
@@ -288,21 +281,24 @@ nav ul li a {
     }
 
     .ok {
-        width: 80%;
+        width: 100%;
         height: 40%;
         margin-top: 30px;
-        margin-right: 85px;
+        margin-right: 0;
+        margin-left: 20px;
     }
 
-    #container {
+    #contenitore {
         margin-top: 10px;
         height: 440px;
+       
+        
     }
 
     .modulo-ricerca {
         width: 50%;
         margin-top: 40px;
-        margin-right: 170px;
+        margin-left: 20px;
     }
         
     .modulo-ricerca #search {
@@ -319,61 +315,71 @@ nav ul li a {
     }
 
     .imgw200{
-        width: 620px;
-        height: 350px;
+        width: 320px;
+        height: 200px;
+        transition-property: none;
+        
     }
+
+    .imgw200:hover {
+        -webkit-transform: none !important;
+        transform: none;
+      }
+    
+    
 }
 
   
   
 /* ---------- MOBILE L ---------- */
 
-@media screen and (max-width: 425px) {  
+@media screen and (max-width: 500px) {  
     .btn{
         font-size: x-small;
-        margin-right: 30px;
+        margin-right: 20px;
     }
 
     h1 {
-        font-size: 25px;;
+        font-size: 20px;
         margin-top: 10px;
-        margin-left: 110px;
+        margin-left: 50px;
     }
 
     .sinistra {
-        width: 75%;
-        margin-top: 70px;
+        width: 85%;
+        margin-top: 50px;
+        
     }
     
     nav{
         height: 45px;
         width: 100%;
-        margin-left: 1px;
-        margin-right: 1px;
+        margin-right: 0;
+        margin-left:-2px;
     }
 
     nav ul li a {
-        font-size: medium;
+        font-size: xx-small;
     }
 
     .ok {
-        width: 100%;
+        width:100%;
         height: 40%;
         margin-top: 30px;      
         margin-right: -10px;
         margin-left: -10px;
     }
 
-    #container {
+    #contenitore{
         margin-top: 10px;
-        margin-right: 50px;
+        margin-right: -10px;
         height: 400px;
-        width: 80%;
+        width: 90%;
     }
 
     #griglia{
         width: 100%;
-        margin-right: 30px;
+        margin-right: -10px;
     }
 
     .modulo-ricerca {
@@ -397,7 +403,9 @@ nav ul li a {
     }
 
     .imgw200{
-        width: 570px;
-        height: 400px;
+        width: 340px;
+        height: 210px;
+
+        
     }
 }
