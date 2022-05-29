@@ -7,7 +7,35 @@
     <link rel="stylesheet" href="login.css" />
     <script type="application/javascript" src="../js/bootstrap.js"></script>
     <script src="loginCheck.js"></script>
-    <title> Login </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="../bootstrap/js/bootstrap.min.js"></script> 
+    <title>Forum Cucina</title>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+             $("#su").mouseenter(function(){
+              $("#su").css("background-color", "rgb(243, 151, 75)");
+                $("#su").css("border-color", "rgb(231, 123, 34)");
+                $("#su").css("color", "#000000");
+
+             });
+             $("#su").mouseleave(function(){
+                 $("#su").css("background-color", "rgb(245, 198, 179)");
+             });
+             $("#re").mouseenter(function(){
+              $("#re").css("background-color", "rgb(243, 151, 75)");
+                $("#re").css("border-color", "rgb(231, 123, 34)");
+                $("#re").css("color", "#000000");
+
+             });
+             $("#re").mouseleave(function(){
+                 $("#re").css("background-color", "rgb(245, 198, 179)");
+             });
+             
+             
+        });
+    </script>
 </head>
 <body>
     <?php
@@ -25,7 +53,20 @@
             $result = pg_query_params($dbconn, $q1, array($email));
             
             if (!($line=pg_fetch_array($result, null, PGSQL_ASSOC))) {
-                echo "<h1> Non sei registrato! Clicca </h1> <a href=../registrazione/registrazione.html> QUI </a> <h1> per registrarti! <h1>";
+
+                ?>
+                <script type="text/javascript">
+                    var ris2 = confirm ("Non sei registrato!");
+                    if(ris2 === true)
+                    {
+                        location.href = '../registrazione/index.html';
+                    }
+                    else
+                    {
+                        location.href = 'login.php';
+                    }
+                </script>
+            <?php
             }
 
             else{
@@ -34,7 +75,11 @@
                 $q2 = "SELECT * from utente where email = $1 and pawd = $2";
                 $result = pg_query_params($dbconn, $q2, array($email, $password));
                 if (!($line=pg_fetch_array($result, null, PGSQL_ASSOC))) {
-                    echo "La password inserita è errata! ";
+                    ?>
+                     <script type="text/javascript">
+                        window.alert("La password inserita è errata");
+                    </script>   
+                    <?php
                 }
                 else{
                     if($remember!=null){
@@ -61,25 +106,25 @@
     <div class="centralBox"> 
         <form action="login.php" method="POST" class="form-login" name="myLogin" onSubmit="checkLogin()">
             <h2 class="h2"> Inserisci le tue credenziali! </h2>
-            <label for="email" class="label"> indirizzo email </label>
+            <label for="email" class="label"> Indirizzo email </label>
             <input type="text" name="inputEmail" class="form-input" value="<?php if(isset($_COOKIE['login'])){echo $_COOKIE['login']['username'];}; ?>" placeholder="email" required autofocus >
+            
             <br>
-            <br>
-            <label for="password" class="label"> password </label> 
+            <label for="password" class="label"> Password </label> 
             <input type="password" name="inputPassword" class="form-input" value="<?php if(isset($_COOKIE['login'])){echo $_COOKIE['login']['password'];}; ?>" placeholder="password" required > 
 
+           
             <br>
             <br>
-            
              <div id="remember" class="mb-3">
                 <input type="checkbox" name="remember" value="remember" <?php if(isset($_COOKIE['login'])){ echo 'checked';}; ?> >
                 <label for="remember"> Remember me </label>
             </div>
-            <br>
+            
             <br>
 
-            <button class="btn" type="submit" name="accessButton" > Accedi </button>
-            <button class="btn" type="reset" name="resetButton"> Reset </button>
+            <button class="btn" id="su" type="submit" name="accessButton" > Accedi </button>
+            <button class="btn" id="re" type="reset" name="resetButton"> Reset </button>
         </form>
     </div>
 </body>
